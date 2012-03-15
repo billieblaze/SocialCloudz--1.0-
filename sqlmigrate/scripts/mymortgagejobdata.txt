@@ -1,0 +1,919 @@
+--// mymortgagejobdata
+-- Migration SQL that makes the change goes here.
+delete from community.style where communityID = 251;
+
+insert into community.styleExtra
+(communityID, extracss)
+values
+('251', '#menuBar ul li a:hover, #menuBar ul li.active a { padding:8px 8px 8px 8px; }
+#menuBar ul { }
+#menuBar ul a { margin: 0px; }
+div.mod {border: 0px none; }
+.listSingle div.mod div.bd { background-repeat: no-repeat;}
+.list { background-color: transparent;}
+/* HOMEPAGE CAROUSEL */
+.jcarousel-skin-tango .jcarousel-container {
+-moz-border-radius: 10px;
+background: #F0F6F9;
+border: 1px solid #346F97;
+}
+.jcarousel-skin-tango .jcarousel-container-vertical {
+width: 200px;
+height: 568px;
+padding: 40px 25px;
+}
+.jcarousel-skin-tango .jcarousel-clip-vertical {
+width: 220px;
+height: 645px;
+}
+.jcarousel-skin-tango .jcarousel-item {
+width: 200px;
+height:100px;
+-moz-border-radius: 10px;
+}
+.jcarousel-skin-tango .jcarousel-item-vertical {
+margin-bottom: 10px;
+}
+.jcarousel-skin-tango .jcarousel-item-placeholder {
+background: #fff;
+color: #000;
+}
+/**
+* Vertical Buttons
+*/
+.jcarousel-skin-tango .jcarousel-next-vertical {
+position: absolute;
+bottom: 5px;
+left: 100px;
+width: 32px;
+height: 32px;
+cursor: pointer;
+background: transparent url(/images/next-vertical.png) no-repeat 0 0;
+}
+.jcarousel-skin-tango .jcarousel-next-vertical:hover {
+background-position: 0 -32px;
+}
+.jcarousel-skin-tango .jcarousel-next-vertical:active {
+background-position: 0 -64px;
+}
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical,
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical:active {
+cursor: default;
+background-position: 0 -96px;
+}
+.jcarousel-skin-tango .jcarousel-prev-vertical {
+position: absolute;
+top: 5px;
+left: 100px;
+width: 32px;
+height: 32px;
+cursor: pointer;
+background: transparent url(/images/prev-vertical.png) no-repeat 0 0;
+}
+.jcarousel-skin-tango .jcarousel-prev-vertical:hover {
+background-position: 0 -32px;
+}
+.jcarousel-skin-tango .jcarousel-prev-vertical:active {
+background-position: 0 -64px;
+}
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical,
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical:active {
+cursor: default;
+background-position: 0 -96px;
+}
+');
+
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod div.bd', 'font-family', 'Verdana');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod div.bd', 'font-size', '14px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod div.bd', 'padding', '8px 18px 16px 26px ');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod div.hd', 'color', '#5a5a5a');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod div.hd', 'font-family', 'Verdana');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod div.hd', 'font-size', '16px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod div.hd', 'font-weight', 'bold');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listRight div.mod div.hd', 'padding', '3px 3px 18px 12px ');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod div.bd', 'font-family', 'Verdana');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod div.bd', 'font-size', '14px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod div.bd', 'padding', '8px 18px 16px 26px ');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod div.hd', 'color', '#5a5a5a');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod div.hd', 'font-family', 'Verdana');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod div.hd', 'font-size', '16px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod div.hd', 'font-weight', 'bold');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', ' .listSingle div.mod div.hd', 'padding', '3px 3px 18px 12px ');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#bd', 'background-color', '#b5b5b5');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#bd', 'border-color', '#000000');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#bd', 'border-width', '1px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#bd', 'padding', '10px 10px 10px 10px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#ft', 'background-color', '#ffffff');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#ft', 'font-family', 'Verdana');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#ft', 'font-size', '10px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#ft a', 'color', '#000000');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#hd', 'background-color', '#000000');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#hd', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/20C2680D-1A94-4F14-968500BCE224DE68.jpg)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#hd', 'background-position', 'center');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#hd', 'height', '0px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar', 'background-color', '#79b6c2');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/8242D983-8453-404D-A85C7A7F78BD56A7.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul', 'padding', '50px 10px 0px 352px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'border-color', '#aeaeae');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'border-width', '1px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'color', '#ffffff');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'font-family', 'Verdana');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'font-size', '11px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'font-weight', 'bold');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'padding', '8px 8px 8px 8px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a', 'text-align', 'center');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a:hover', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/9AEB956E-E1DB-4AA9-A878A0108D564D58.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li a:hover', 'color', '#000000');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li.active a', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/AEDF74DE-D6E0-43D5-9A4F98A6C51A96AB.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li.active a', 'color', '#000000');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#menuBar ul li.active a', 'font-size', '12px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteLogo', 'background-image', 'url()');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteLogo', 'background-repeat', 'no-repeat');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteLogo', 'height', '71px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteName', 'color', '#313730');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteName', 'display', 'none');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteName', 'font-family', 'Lucida Console');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteName', 'font-size', '34px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteName', 'padding', '40px 0px 0px 600px ');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteTagLine', 'color', '#2f1c81');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteTagLine', 'display', 'none');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteTagLine', 'font-size', '12px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '#siteTagLine', 'padding', '0px 0px 0px 595px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft .mod', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft .mod', 'border-color', '#ffffff');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.bd', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.bd', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/B8A81863-7536-4BED-B150F67491DF6A6E.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.bd', 'background-position', 'top');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.bd', 'background-repeat', 'repeat-y');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.bd', 'color', '#000000');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.bd', 'font-family', 'Verdana');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.bd', 'font-size', '14px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.bd', 'padding', '8px 18px 16px 26px ');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.ft', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/4CB6F638-7E70-45F0-96CC571653E32DCB.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.ft', 'background-position', 'top');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.ft', 'background-repeat', 'no-repeat');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.ft', 'height', '30px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/08DA2B51-435C-4583-8B60D4C6CD9CC04C.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'background-position', 'top');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'background-repeat', 'no-repeat');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'color', '#5a5a5a');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'font-family', 'Verdana');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'font-size', '16px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'font-weight', 'bold');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'height', '15px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listLeft div.mod div.hd', 'padding', '4px 20px 18px 20px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight .mod', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight .mod', 'border-color', '#D2D2D2');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight .mod', 'border-width', '0px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight .mod', 'padding', '0px 0px 0px 0px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.bd', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.bd', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/C9E8CC16-7538-498C-B1EAC9B7C96FA0F9.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.bd', 'background-position', 'bottom');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.ft', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.ft', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/909F850A-6BB5-4A83-8D90C6F318CD737C.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.ft', 'background-position', 'top');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.ft', 'background-repeat', 'no-repeat');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.ft', 'height', '25px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.hd', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.hd', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/09DAC74D-5817-4CD9-A0673F3CD6470B99.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.hd', 'color', '#5a5a5a');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listRight div.mod div.hd', 'height', '13px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listSingle .mod', 'border-color', '#ffffff');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listSingle div.mod div.bd', 'background-image', 'url()');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listSingle div.mod div.bd', 'padding', '0px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listSingle div.mod div.hd', 'background-color', 'transparent');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listSingle div.mod div.hd', 'background-image', 'url()');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listSingle div.mod div.hd', 'height', '0px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', '.listSingle div.mod div.hd', 'padding', '0px');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', 'body', 'background-color', '#ffffff');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', 'body', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/6F6ED805-4360-4AD0-BE2A3B9D4A22BFC8.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', 'body', 'background-position', 'top');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', 'body', 'background-repeat', 'repeat-x');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', 'undefined', 'background-color', '#ffffff');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', 'undefined', 'background-image', 'url(http://c191634.r34.cf1.rackcdn.com/6C531735-18B8-45BA-B032B6FEC9F8D35D.png)');
+insert into community.style
+(communityID, selector, attribute, value)
+values('251', 'undefined', 'background-repeat', 'repeat-x');
+
+delete from community.pageSettings
+where communityID = 251;
+
+insert into community.pageSettings
+(communityID, settingID, value, page)
+values('251', '291', 'Anyone', '1');
+
+insert into community.pageSettings
+( communityID, settingID, value, page)
+values( '251', '295', 'Anyone', '1');
+
+insert into community.pageSettings
+( communityID, settingID, value, page)
+values( '251', '95', 'Auto', '1');
+
+insert into community.pageSettings
+( communityID, settingID, value, page)
+values( '251', '292', 'Members', '1');
+
+insert into community.pageSettings
+( communityID, settingID, value, page)
+values( '251', '293', 'Members', '1');
+
+insert into community.pageSettings
+( communityID, settingID, value, page)
+values( '251', '294', 'Members', '1');
+
+insert into community.pageSettings
+( communityID, settingID, value, page)
+values( '251', '298', 'Business', '1');
+
+
+delete from community.menu where communityID = 251;
+delete from community.cmsPages where communityID = 251;
+delete from community.communitysettings where communityID = 251;
+insert into community.menu
+( title, sortOrder, communityID, type, url, newWindow, visibleTo, feature, cms, visibleToProfileType)
+values
+( 'Home', '1', '251', '0', '/index.cfm/member/util/list?profileType=2', '0', '0', '0', 'home', '0');
+
+insert into community.menu
+( title, sortOrder, communityID, type, url, newWindow, visibleTo, feature, cms, visibleToProfileType)
+values
+( 'Profile', '2', '251', '1', '/index.cfm/member/profile/index', '0', '0', '0', '0', '0');
+
+insert into community.menu
+( title, sortOrder, communityID, type, url, newWindow, visibleTo, feature, cms, visibleToProfileType)
+values
+( 'Search People', '3', '251', '1', '/index.cfm/member/util/list?profileType=2', '0', '0', '0', '0', '2');
+
+insert into community.menu
+( title, sortOrder, communityID, type, url, newWindow, visibleTo, feature, cms, visibleToProfileType)
+values
+( 'Company List', '4', '251', '1', '/index.cfm/member/util/list?profileType=2', '0', '0', '18', '0', '0');
+
+insert into community.menu
+( title, sortOrder, communityID, type, url, newWindow, visibleTo, feature, cms, visibleToProfileType)
+values
+( 'Job Postings', '5', '251', '2', NULL, '0', '0', '18', '0', NULL);
+
+insert into community.menu
+( title, sortOrder, communityID, type, url, newWindow, visibleTo, feature, cms, visibleToProfileType)
+values
+( 'Post Job', '6', '251', '1', '/index.cfm/content/form/job/0', '0', '0', '0', '0', '2');
+
+insert into community.menu
+(title, sortOrder, communityID, type, url, newWindow, visibleTo, feature, cms, visibleToProfileType)
+values
+('Abacus Mortgage', '7', '251', '1', 'http://www.abacusmortgagetraining.com', '0', '0', '0', '0', '0');
+
+insert into community.menu
+( title, sortOrder, communityID, type, url, newWindow, visibleTo, feature, cms, visibleToProfileType)
+values
+( 'About Us', '8', '251', '1', '/about_us.cfm', '0', '0', '0', '0', NULL);
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '3', '1');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '28', '1');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '29', '1');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '41', 'above');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '42', 'custom-doc');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '43', '1075');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '45', 'lastPage');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '46', '0');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '47', '0');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '84', 'home');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '85', '69728ab435dafec5edb72de7c033615e');
+insert into community.communitysettings
+(communityID, settingID, value)
+values('251', '86', '0');
+insert into community.cmsPages
+( title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'home', '251', '2011-02-24 21:28:38', '2011-02-24 21:28:38');
+insert into community.cmsPages
+(title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'admin', '251', '2011-02-24 22:18:07', '2011-02-24 22:18:07');
+insert into community.cmsPages
+( title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'signup', '251', '2011-02-24 23:04:49', '2011-02-24 23:04:49');
+insert into community.cmsPages
+( title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'job', '251', '2011-02-25 07:37:53', '2011-02-25 07:37:53');
+insert into community.cmsPages
+( title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'about_us.cfm', '251', '2011-03-01 22:54:21', '2011-03-01 22:54:21');
+
+insert into community.cmsPages
+( title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'Members', '251', '2011-03-03 18:25:12', '2011-03-03 18:25:12');
+insert into community.cmsPages
+( title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'profile', '251', '2011-03-03 22:31:12', '2011-03-03 22:31:12');
+
+insert into community.cmsPages
+(title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'contact.cfm', '251', '2011-03-15 08:57:38', '2011-03-15 08:57:38');
+insert into community.cmsPages
+( title, description,keywords, url, communityID, datecreated, dateupdated)
+values( NULL, NULL, NULL, 'features.cfm', '251', '2011-03-16 15:03:54', '2011-03-16 15:03:54');
+
+
+
+/*!40000 ALTER TABLE members.profileSections DISABLE KEYS */;
+insert into members.profileSections
+(id, name, communityID, sortOrder, typeID)
+values
+('38', 'About Me', '251', NULL, '1');
+
+insert into members.profileSections
+(id, name, communityID, sortOrder, typeID)
+values
+('39', 'Work Experience', '251', NULL, '1');
+
+insert into members.profileSections
+(id, name, communityID, sortOrder, typeID)
+values
+('40', 'Education', '251', NULL, '1');
+
+insert into members.profileSections
+(id, name, communityID, sortOrder, typeID)
+values
+('42', 'Company Information', '251', NULL, '2');
+insert into members.profileSections
+(id, name, communityID, sortOrder, typeID)
+values
+('43', 'Contact', '251', NULL, '2');
+
+insert into members.profileSections
+(id, name, communityID, sortOrder, typeID)
+values
+('44', 'Locations', '251', NULL, '2');
+
+insert into members.profileSections
+(id, name, communityID, sortOrder, typeID)
+values
+('45', 'Multiquestion Test for Valuelists', '251', NULL, '0');
+
+insert into members.profileSections
+(id, name, communityID, sortOrder, typeID)
+values
+('46', 'Qualification Categories', '251', NULL, '1');
+
+
+
+/*!40000 ALTER TABLE members.profileSections ENABLE KEYS */;
+
+/*!40000 ALTER TABLE members.profileQuestions DISABLE KEYS */;
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('110', 'Career Highlights', '38', 'textarea', '4', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('111', 'Skills', '38', 'text', '1', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('113', 'Professional Memberships', '38', 'text', '2', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('114', 'Languages', '38', 'text', '3', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('115', 'Job', '39', 'fieldset', NULL, '1', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('116', 'Title', '39', 'text', NULL, '0', '85', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('117', 'Title', '39', 'text', NULL, '0', '115', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('118', 'Company Name', '39', 'text', NULL, '0', '115', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('119', 'Industry', '39', 'text', NULL, '0', '115', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('120', 'Location', '39', 'text', NULL, '0', '115', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('121', 'Start Date', '39', 'date', NULL, '0', '115', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('122', 'End Date', '39', 'date', NULL, '0', '115', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('123', 'Summary', '39', 'text', NULL, '0', '115', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('124', 'School', '40', 'fieldset', NULL, '1', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('125', 'Degree Level', '40', 'select', NULL, '0', '124', 'Some High School,High School or Equivalent,Some Co', NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('126', 'Field of Study', '40', 'text', NULL, '0', '124', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('127', 'Start Date', '40', 'date', NULL, '0', '124', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('128', 'End Date', '40', 'date', NULL, '0', '124', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('129', 'Institution Name', '40', 'text', NULL, '0', '124', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('130', 'Summary', '40', 'text', NULL, '0', '124', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('131', 'Certifications', '40', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('133', 'Company Name', '42', 'text', '1', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('134', 'State of Incorporation', '42', 'text', '2', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('135', 'Date of Incorporation', '42', 'date', '3', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('136', 'First Name', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('137', 'Last Name', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('138', 'Primary Email', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('139', 'Address', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('140', 'City', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('141', 'State', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('142', 'Zip', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('143', 'Phone', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('144', 'Cell', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('145', 'Fax', '43', 'text', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('146', 'Website', '42', 'text', '5', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('147', 'Location', '44', 'fieldset', NULL, '1', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('148', 'State', '44', 'text', NULL, '0', '147', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('149', 'City', '44', 'text', NULL, '0', '147', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('150', 'Address', '44', 'text', NULL, '0', '147', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('151', 'Phone', '44', 'text', NULL, '0', '147', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('152', 'Zip', '44', 'text', NULL, '0', '147', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('153', 'Manager', '44', 'text', NULL, '0', '147', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('156', 'Test Fieldset', '45', 'fieldset', NULL, '1', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('158', 'Select Test', '45', 'select', NULL, '0', '156', '1,2,3', NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('159', 'Check Test', '45', 'checkbox', NULL, '0', '156', 'Kinda,Sorta,Maybe', NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('160', 'Date Test', '45', 'date', NULL, '0', '156', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('162', 'Date', '45', 'date', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('163', 'Test Radio Stuff', '45', 'radio', NULL, '0', '0', '12,23,34,45', NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('164', 'General Message', '42', 'textarea', '6', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('165', 'State Licenses', '42', 'text', '4', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('166', 'Test', '45', 'textarea', NULL, '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('167', 'Career Goals', '38', 'textarea', '5', '0', '0', NULL, NULL);
+insert into members.profileQuestions
+(id, question, sectionID, type, sortorder, multiple, groupID, valueList, description)
+values
+('168', 'I am qualified for the following jobs', '46', 'checkbox', NULL, '0', '0', 'Accounting,Administrative Assistant,Branch Manager,Business Manager,Compliance Officer,Executive Assistant,Information Security Officer,Inside sales/telemarketing,Marketing,Mortgage Broker,Mortgage Loan Officer [MLO],Processor,Receptionist,Sales Manager,Technology,Underwriter,Web Design,Wholesale Acct Exec,Wholesale Managment', NULL);
+/*!40000 ALTER TABLE members.profileQuestions ENABLE KEYS */;
+
+insert into community.modulesettings
+(moduleID, title, sort, sortDirection,displaySorting, displayRows, displayMembers, displayTemplate, communityID, thumbsize, thumbalign, displaycontentid, accesslevel, displaytag, displayCategoryID, displayLayout, headerImg, featured, active, displayRecordCount, displayprofileType, iscontent)
+values( '3', 'Where mortgage professionals and mortgage companies meet.', NULL, 'desc', '1', NULL, NULL, NULL, '251', '75', 'left', NULL, NULL, NULL, NULL, '1', NULL, '0', '0', NULL, '0', '1');
+
+
+insert into community.modulepage
+(modulesettingID, sortOrder, list, page, communityID)
+values(LAST_INSERT_ID(), '1', '1', 'home', '251');
+
+
+
+insert into community.modulesettings
+(moduleID, title, sort, sortDirection,displaySorting, displayRows, displayMembers, displayTemplate, communityID, thumbsize, thumbalign, displaycontentid, accesslevel, displaytag, displayCategoryID, displayLayout, headerImg, featured, active, displayRecordCount, displayprofileType, iscontent)
+values( '3', 'Sponsors', NULL, 'desc', '1', NULL, NULL, NULL, '251', '75', 'left', NULL, NULL, NULL, NULL, '1', NULL, '0', '0', NULL, '0', '1');
+
+insert into community.modulepage
+(modulesettingID, sortOrder, list, page, communityID)
+values(LAST_INSERT_ID(), '1', '2', 'home', '251');
+
+
+
+insert into community.modulesettings
+( moduleID, title, sort, sortDirection,displaySorting, displayRows, displayMembers, displayTemplate, communityID, thumbsize, thumbalign, displaycontentid, accesslevel, displaytag, displayCategoryID, displayLayout, headerImg, featured, active, displayRecordCount, displayprofileType, iscontent)
+values( '3', 'About Us', NULL, 'desc', '1', NULL, NULL, NULL, '251', '75', 'left', NULL, NULL, NULL, NULL, '1', NULL, '0', '0', '1', '0', '0');
+
+
+
+insert into community.modulepage
+(modulesettingID, sortOrder, list, page, communityID)
+values(LAST_INSERT_ID(), '1', '1', 'about_us.cfm', '251');
+
+
+
+insert into community.modulesettings
+( moduleID, title, sort, sortDirection,displaySorting, displayRows, displayMembers, displayTemplate, communityID, thumbsize, thumbalign, displaycontentid, accesslevel, displaytag, displayCategoryID, displayLayout, headerImg, featured, active, displayRecordCount, displayprofileType, iscontent)
+values( '8', 'Featured Companies', NULL, 'desc', '1', '6', NULL, NULL, '251', '120', 'left', NULL, NULL, '2', NULL, '1', NULL, '1', '0', '1', '0', '0');
+
+insert into community.modulepage
+(modulesettingID, sortOrder, list, page, communityID)
+values(LAST_INSERT_ID(), '2', '1', 'home', '251');
+
+insert into community.modulesettings
+( moduleID, title, sort, sortDirection,displaySorting, displayRows, displayMembers, displayTemplate, communityID, thumbsize, thumbalign, displaycontentid, accesslevel, displaytag, displayCategoryID, displayLayout, headerImg, featured, active, displayRecordCount, displayprofileType, iscontent)
+values( '3', 'Contact Us', NULL, 'desc', '1', NULL, NULL, NULL, '251', '75', 'left', NULL, NULL, NULL, NULL, '1', NULL, '0', '0', '1', '0', '0');
+
+insert into community.modulepage
+(modulesettingID, sortOrder, list, page, communityID)
+values(LAST_INSERT_ID(), '1', '2', 'about_us.cfm', '251');
+
+insert into community.modulesettings
+( moduleID, title, sort, sortDirection,displaySorting, displayRows, displayMembers, displayTemplate, communityID, thumbsize, thumbalign, displaycontentid, accesslevel, displaytag, displayCategoryID, displayLayout, headerImg, featured, active, displayRecordCount, displayprofileType, iscontent)
+values( '3', ' ', NULL, 'desc', '1', NULL, NULL, NULL, '251', '75', 'left', NULL, NULL, NULL, NULL, '0', NULL, '0', '0', '1', '0', '0');
+insert into community.modulepage
+(modulesettingID, sortOrder, list, page, communityID)
+values(LAST_INSERT_ID(), '1', '7', 'home', '251');
+
+insert into community.modulesettings
+(moduleID, title, sort, sortDirection,displaySorting, displayRows, displayMembers, displayTemplate, communityID, thumbsize, thumbalign, displaycontentid, accesslevel, displaytag, displayCategoryID, displayLayout, headerImg, featured, active, displayRecordCount, displayprofileType, iscontent)
+values( '3', 'Why I Am Here', NULL, 'desc', '1', NULL, NULL, NULL, '251', '75', 'left', NULL, '0', NULL, NULL, '1', NULL, '0', '0', '1', '0', '0');
+insert into community.modulepage
+(modulesettingID, sortOrder, list, page, communityID)
+values(LAST_INSERT_ID(), '1', '1', 'member.util.list', '251');
+
+insert into community.modulesettings
+( moduleID, title, sort, sortDirection,displaySorting, displayRows, displayMembers, displayTemplate, communityID, thumbsize, thumbalign, displaycontentid, accesslevel, displaytag, displayCategoryID, displayLayout, headerImg, featured, active, displayRecordCount, displayprofileType, iscontent)
+values( '3', 'Why Am I Here', NULL, 'desc', '1', NULL, NULL, NULL, '251', '75', 'left', NULL, '0', NULL, NULL, '1', NULL, '0', '0', '1', '0', '0');
+
+insert into community.modulepage
+(modulesettingID, sortOrder, list, page, communityID)
+values(LAST_INSERT_ID(), '1', '1', 'job', '251');
+
+
+
+insert into community.`layout`
+(page, columns, template, `right`, menu, communityID)
+values
+('about_us.cfm', '2', '6', '', NULL, '251'),
+('home', '2', '6', '', NULL, '251'),
+('job', '2', '6', '', NULL, '251'),
+('member.profile.index', '2', '6', '', NULL, '251'),
+('member.util.list', '2', '6', '', NULL, '251'),
+('Members', '2', '6', '', NULL, '251'),
+('profile', '2', '6', '', NULL, '251');
+
+

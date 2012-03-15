@@ -1,0 +1,1 @@
+<div align="right"><A href='' class="small">View All</A></div>

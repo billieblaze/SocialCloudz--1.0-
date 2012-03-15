@@ -1,0 +1,111 @@
+/* BEGIN SITE SKIN */
+	
+	body{
+		background-repeat:repeat-x;
+		background-color:#000000;
+		background-image:url("http://c264119.r19.cf1.rackcdn.com/content/community/2/SC-bg.png");
+		background-position:center top;
+	}
+
+	/* Navigation */
+	#menuBar {
+		background-color:transparent;
+		background-image:url("http://c264119.r19.cf1.rackcdn.com/content/community/2/SC-NavBG1.png");
+		background-position:center top;
+		background-repeat:no-repeat;
+	}
+	#menuBar ul {
+		padding:10px 0 82px 510px;
+	}
+	#menuBar ul li a {
+		background-color:transparent;
+		border-color:#FFFFFF;
+		border-width:0;
+		color:#000000;
+		font-size:12px;
+		font-weight:bold;
+		padding:26px 25px 25px;
+	}
+	#menuBar ul li a:hover {
+		background-color:transparent;
+		background-image:url("");
+		color:#939DAE;
+	}
+	#menuBar ul li.active a {
+		background-color:transparent;
+		color:#7ABCEB;
+	}
+	
+
+	/* Header */
+		#hd {background-color:transparent;background-image:url("");height:0;padding:0;}
+		#siteName {
+			visibility:hidden;
+		}
+
+		#siteTagLine {
+			visibility:hidden;
+		}
+
+	/* Body */
+		.bodyContent{border-style:solid;border: 0px solid;}
+		#bd {
+			background-color:transparent;
+			background-image:url("http://c264119.r19.cf1.rackcdn.com/content/community/2/bodybg2.png");
+			padding:0 35px;
+			min-height:600px;
+		}
+
+	/* Footer */
+		#ft {
+			background-color:transparent;
+			background-image:url("http://c264119.r19.cf1.rackcdn.com/content/community/2/bodybg1.png");
+			background-position:center center;
+			background-repeat:repeat-y;
+			color:#000000;
+			font-size:11px;
+			font-weight:inherit;
+			padding:10px 40px;
+		}
+
+		#ft a {
+			color:#000000;
+		}
+
+		#ft_left{ float:left; text-align:left}
+		#ft_right{ float:right; text-align:right;}
+
+
+/* PORTAL */
+	/* Containers */
+		.list li{list-style: none;}
+		#list1,#list2,#list3,#list4,#list5,#list6,#list7,#list8,#list9,#list10 {padding: 0;margin: 0;}
+
+	/* Module Shell */
+		div.mod {	position:relative;	border:1px solid #808080;	zoom:1;	margin:0px 0px 0px 0px;}
+		.noLayout{ background-color:transparent !important;background-image: none !important; border:0px solid none;}
+		.module{ width:47%; height:50px; border:1px solid gray; background-color:#FFFFFF; padding:5px; float:left}
+		.moduleLink{color:black; font-weight:bold;}
+
+	/* Module Header */
+		div.mod div.hd {
+			background-color:transparent;
+			color:#003366;
+			font-family:Verdana;
+			font-size:20px;
+			font-weight:bold;
+			height:35px;
+			padding:0 0 0 10px;
+			visibility:visible;
+		}
+		
+	/* Module Body */	
+		div.mod .bd {	padding:8px;}
+		div.mod div.bd { 	zoom:1;	padding:8px;	border: 0px solid gray;}
+		div.mod .bd img { max-width:100% !important;}
+		div.mod div.bd ul li a {	color:#000;}
+		// TODO: do more with this if it's the way to target a module for "loading" or updating..  
+		div.mod div.bd div.loading {	background-image:url(/images/progress.gif);	background-repeat:no-repeat;	background-position:5px 5px;	padding:5px 5px 5px 25px;}
+		
+	/* Module Footer */
+		div.mod .ft {border: 0px solid gray;}

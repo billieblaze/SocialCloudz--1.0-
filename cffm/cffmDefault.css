@@ -1,0 +1,50 @@
+div#cffm {background-color:#fff; font:12px sans-serif; color:#000;}
+div#cffm td {font:12px sans-serif; font-size:12px; color:#000; vertical-align:top;}
+div#cffm FORM {padding:0; margin:0; display:inline;}
+div#cffm a.directory {font-weight:bold;}
+div#cffm .cffm_filelist {border:1px solid #000; border-collapse:collapse;}
+div#cffm .cffm_filelist TH {background-color:navy; color:#fff !important; font-weight:bold; text-align:left; padding-left:5px; padding-right:5px;}
+div#cffm .cffm_filelist tr {}
+div#cffm .rowHighlight {background-color:#c0c0c0;}
+div#cffm .cffm_filelist td {padding-left:5px; padding-right:5px;}
+div#cffm .cffm_filelist td.actionLinks {}
+
+div#cffm textarea.cffm_editor {width:100%; height:300px;}
+div#cffm P.cffm_location {font-size:20px; font-weight:bold; margin:0;}
+div#cffm P.cffm_editor {font-size:18px; font-weight:bold;}
+div#cffm fieldset.cffm_errorMessage {background-color:#fcc;}
+div#cffm fieldset.cffm_errorMessage legend {font-weight:bold; font-size:18px;}
+div#cffm table.zipcontents {border-collapse:collapse; border:1px solid #000;}
+div#cffm table.zipcontents tr.headrow td {padding:3px; background-color:navy; color:#fff; font-weight:bold;}
+div#cffm table.zipcontents td {padding:3px; border:1px solid #000;}
+/* div#cffm input.button {background-color:#fff; border:1px solid #666; color:#009; font:10px sans-serif;} */
+div#cffm div.cffmDirectoryLinks {margin-bottom:5px;}
+div#cffm A.downloadLink {font-size:9px;}
+
+/* CSS: (StyleSheet) */
+#imgPreviewWithStyles {background-color:#222; -moz-border-radius:10px; -webkit-border-radius:10px; padding:15px; z-index:999; border:none;}
+
+/* Text below image */
+#imgPreviewWithStyles span {color:#fff; text-align:center; display:block; padding:10px 0 3px 0;}
+div#cffm #image_preview_2 {margin-top:10px;}
+div#cffm #cffmPower {color:#999;}
+div#cffm #cffmPower a {color:#99f;}
+div#cffm .cffmIcon {border:1px solid #fff;}
+
+
+
+/* Added by SunStar Media */
+input.button,  a.button, a.button:visited, td.actionLinks a, td.actionLinks a:visited {background-color:#e0e0e0; text-decoration:none !important; color:#000 !important; padding:0 3px; border-top:1px solid #E6E4E0; border-left:1px solid #E6E4E0; border-right:1px solid #5F5D55; border-bottom:1px solid #5F5D55; text-align:center; font-size:10px; outline:none;}
+input.button:hover, a.button:hover, td.actionLinks a:hover {color:#fff !important; background-color:Highlight; text-decoration:none !important; outline:none;}
+.nowrap, .nobr {white-space:nowrap;}
+.right {text-align:right !important;}
+.odd {background-color:#ededed;}
+.vTable, .vTable th, .vTable td {border:1px solid #000; border-collapse:collapse; vertical-align:top; padding:2px;}
+.vTable th {background-color:#c0c0c0; color:#000;}
+.fleft {float:left !important;}
+.fright {float:right !important;}
+div#cffm div.cffmDirectoryLinks a {font-size: 0.8em; text-decoration: none;}
+div#cffm div.cffmDirectoryLinks a img {display: block;}
+div#cffm div.cffmDirectoryLinks a:hover {font-size: 0.8em;}
+div#cffm div.cffmDirectoryLinks a:hover img {border: 1px solid blue;}
+

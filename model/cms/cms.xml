@@ -1,0 +1,102 @@
+<tables>
+        <table name="pageSettings">
+             <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+             <field ColumnName="settingID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+             <field ColumnName="value" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+			 <field columnName="page" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+        </table>
+        <table name="pageSettingList">
+             <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+             <field ColumnName="name" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+             <field ColumnName="valuelist" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+             <field ColumnName="defaultvalue" CF_DataType="CF_SQL_INTEGER" />
+             <field ColumnName="settingType" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+            <field ColumnName="sortorder" CF_DataType="CF_SQL_INTEGER" />
+       		<field ColumnName="settingGroup" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+        </table>
+		<table name="cmsPages">
+             <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+             <field ColumnName="title" CF_DataType="CF_SQL_VARCHAR"/>
+             <field ColumnName="keywords" CF_DataType="CF_SQL_LONGVARCHAR"/>
+             <field ColumnName="description" CF_DataType="CF_SQL_LONGVARCHAR"/>
+             <field ColumnName="url" CF_DataType="CF_SQL_VARCHAR"/>
+             <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>		
+		     <field ColumnName="dateCreated" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+		     <field ColumnName="dateUpdated" CF_DataType="CF_SQL_DATE" Special="LastUpdatedDate" />							           
+        </table>
+        <table name="style">
+            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"  primarykey="True" Increment="false"/>
+		 	<field ColumnName="selector" CF_DataType="CF_SQL_VARCHAR" primarykey="True" Increment="false"/>
+        	<field ColumnName="attribute" CF_DataType="CF_SQL_longVARCHAR" primarykey="True" Increment="false"/>
+            <field ColumnName="value" CF_DataType="CF_SQL_VARCHAR"/>
+        </table>	
+		<table name="templateData">
+            <field ColumnName="templateID" CF_DataType="CF_SQL_INTEGER"  primarykey="True" Increment="false"/>
+		 	<field ColumnName="selector" CF_DataType="CF_SQL_VARCHAR" primarykey="True" Increment="false"/>
+        	<field ColumnName="attribute" CF_DataType="CF_SQL_VARCHAR" primarykey="True" Increment="false"/>
+            <field ColumnName="value" CF_DataType="CF_SQL_VARCHAR"/>
+        </table>	
+   		<table name="styleExtra">
+            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"  primarykey="True" Increment="false"/>
+		 	<field ColumnName="extracss" CF_DataType="CF_SQL_LongVARCHAR"/>
+        </table>	
+		<table name="menu">
+	        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" primarykey="True" Increment="True"/>
+            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" />
+		 	<field ColumnName="title" CF_DataType="CF_SQL_VARCHAR"/>
+        	<field ColumnName="url" CF_DataType="CF_SQL_VARCHAR"/>
+            <field ColumnName="sortorder" CF_DataType="CF_SQL_INTEGER"/>
+        	<field ColumnName="type" CF_DataType="CF_SQL_VARCHAR"/>        
+            <field ColumnName="newWindow" CF_DataType="CF_SQL_BIT"/>           
+            <field ColumnName="visibleTo" CF_DataType="CF_SQL_VARCHAR"/>
+            <field ColumnName="visibleToProfileType" CF_DataType="CF_SQL_VARCHAR"/>
+            <field ColumnName="feature" CF_DataType="CF_SQL_INTEGER"/>
+			<field ColumnName="cms" CF_DataType="CF_SQL_VARCHAR"/>
+        </table>	
+		<table name="menuFeatures">
+	        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" primarykey="True" Increment="True"/>
+		 	<field ColumnName="name" CF_DataType="CF_SQL_VARCHAR"/>
+        	<field ColumnName="url" CF_DataType="CF_SQL_VARCHAR"/>
+        </table>	
+   		<table name="modulesettings">
+	        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+			<field ColumnName="moduleID" CF_DataType="CF_SQL_INTEGER"  />
+           	<field ColumnName="displayRows" CF_DataType="CF_SQL_NUMERIC"/>
+	        <field ColumnName="displayMember" CF_DataType="CF_SQL_INTEGER"/>
+			<field ColumnName="displaycontentid" CF_DataType="CF_SQL_INTEGER"/>
+			<field ColumnName="displayTemplate" CF_DataType="CF_SQL_VARCHAR" />
+			<field ColumnName="displayTag" CF_DataType="CF_SQL_VARCHAR"/>
+			<field ColumnName="displayCategoryID" CF_DataType="CF_SQL_INTEGER"/>
+        	<field ColumnName="sort" CF_DataType="CF_SQL_VARCHAR" Length="50"/>
+        	<field ColumnName="title" CF_DataType="CF_SQL_VARCHAR" Length="100"/>
+			<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" />         	
+			<field ColumnName="thumbsize" CF_DataType="CF_SQL_VARCHAR" /> 
+			<field ColumnName="accesslevel" CF_DataType="CF_SQL_INTEGER" /> 
+			<field ColumnName="displayLayout" CF_DataType="CF_SQL_BIT" /> 
+			<field ColumnName="headerImg" CF_DataType="CF_SQL_BIT" /> 
+			<field ColumnName="featured" CF_DataType="CF_SQL_BIT" /> 
+			<field ColumnName="active" CF_DataType="CF_SQL_BIT" />
+			<field ColumnName="sortDirection" CF_DataType="CF_SQL_VARCHAR" />
+			<field ColumnName="displaySorting" CF_DataType="CF_SQL_BIT" />
+			<field ColumnName="thumbAlign" CF_DataType="CF_SQL_VARCHAR" /> 
+			<field ColumnName="displayProfileType" CF_DataType="CF_SQL_VARCHAR"/>
+			<field ColumnName="displayRecordCount" CF_DataType="CF_SQL_BIT"/>
+        	<field ColumnName="isContent" CF_DataType="CF_SQL_BIT"/>
+        	<field ColumnName="operator" CF_DataType="CF_SQL_VARCHAR"/>
+        </table>
+        <table name="modulepage">
+           <field ColumnName="modulesettingID" CF_DataType="CF_SQL_INTEGER"  PrimaryKey="true"/>
+           <field ColumnName="page" CF_DataType="CF_SQL_VARCHAR" Length="50"  PrimaryKey="true"/>
+            <field ColumnName="sortorder" CF_DataType="CF_SQL_NUMERIC"/>
+            <field ColumnName="list" CF_DataType="CF_SQL_NUMERIC"/>
+            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"   PrimaryKey="true"/>
+        </table>	
+ 		<table name="module_html">
+       		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+            <field ColumnName="html" CF_DataType="CF_SQL_LONGVARCHAR"/>
+        </table>
+        <table name="module_rss">
+	        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+            <field ColumnName="feed" CF_DataType="CF_SQL_VARCHAR" Length="1024"/>
+        </table>
+	</tables>

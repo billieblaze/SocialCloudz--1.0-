@@ -1,0 +1,249 @@
+
+/* BEGIN SITE SKIN */
+
+	/* Branding Bar */ 
+		#topNav {	font-family: arial !important; top:0;	height:32px;	position:fixed;	right:0;	width:100%;	z-index:9999;	margin:0px 0px 0px 20px;	background:url(/images/brandbar_bg.png) repeat-x 0 0;	text-align:left;}
+
+	/* Branding Megas */
+		ul#branding_menu {color: #fffff;margin: 0; padding:0px;}
+		ul#branding_menu li {display: inline;margin: 0px;position: relative; padding: 0px 20px 5px 0px;}
+		ul#branding_menu h2, ul#branding_menu h3 {font-size: 100%;font-weight: normal;display: inline;}
+		ul#branding_menu li a {color: #ffffff;text-decoration: none;padding: 0px 0px 10px 0px;}
+		ul#branding_menu li.mega a {text-decoration:none;padding: 0px 0px 4px 0px;}
+		ul#branding_menu li.mega a:hover {text-decoration: none;}
+		ul#branding_menu div {display: none;}
+		ul#branding_menu li.mega div {border: 1px solid #dda;position: absolute;top: 25px;left: 0em;padding:0px 3px;background: #fff;color: gray;}
+		ul#branding_menu li.hovering div {display: block;}
+		ul#branding_menu li.mega div a {color: #300;padding: 0;background-image: none;text-decoration: none;}
+		ul#branding_menu div h3 {color: gray;font-weight: bold;font-size: 1.1em;}
+		ul#branding_menu div p {margin: 0 0 0.8em 0;padding: 0;}
+
+	/* Navigation */
+		#menuBar{width:100%;	margin: 0px; background-color: silver;}
+		#menuBar ul{ margin:0px; padding: 0px;}
+		#menuBar ul li	{ float: left;list-style: none;}
+		
+		#menuBar ul li a{display:block;padding:5px 12px;text-decoration:none;border-right:1px solid black; color: black;}
+		#menuBar ul li a:hover{}
+		
+		#menuBar ul li.active a {}
+		#menuBar ul li.active a:hover {}
+
+	
+
+	/* Header */
+		#hd {border: 0px solid gray;	height:150px;	background-color:#666666;}
+		#siteName {	font-size:24px;	font-weight:bold;	padding: 25px 0px 0px 25px;	background-repeat:no-repeat;text-decoration: none;}
+		#siteTagLine {	font-size:14px;	font-weight:bold;	padding: 0px 0px 0px 25px;	background-repeat:no-repeat;text-decoration: none;}
+
+	/* Body */
+		.bodyContent{border-style:solid;border: 0px solid;}
+		#bd{	background-color:#999999;	background-position:center;	min-height:400px;	border:0px solid black;}
+		#bd:after {	display:block;	clear:both;	visibility:hidden;	content:'.';	height:0;}
+		
+
+	/* Footer */
+		#ft {  border: 0px solid gray;	background-color:#CCCCCC;	padding:10px;	text-align:center;	min-height:20px;}
+		#ft_left{ float:left; text-align:left}
+		#ft_right{ float:right; text-align:right;}
+
+/* PORTAL */
+
+	/* drag n drop sortable */
+	.ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 50px !important; }
+	.ui-sortable-placeholder * { visibility: hidden; }
+	#bd li.item { 	padding: 0; list-style:none;}
+	#bd li.moving {	background-color:silver;	border:1px solid gray;}
+
+	/* Containers */
+		.list li{list-style: none;}
+		#list1,#list2,#list3,#list4,#list5,#list6,#list7,#list8,#list9,#list10 {padding: 0;margin: 0;}
+
+	/* Module Shell */
+		div.mod {	position:relative;		zoom:1;	margin:0px 0px 0px 0px;}
+		.noLayout{ background-color:transparent !important;background-image: none !important; border:0px solid none;}
+		.module{ width:47%; height:50px; border:1px solid gray; background-color:#FFFFFF; padding:5px; float:left}
+		.moduleLink{color:black; font-weight:bold;}
+
+	/* Module Header */
+		div.mod div.hd {	position:relative;	zoom:1;	margin:0;	padding:3px;	color:#000;	border: 0px solid gray;	background-position:top;	zoom:1;	height:15px;}
+
+		div.mod div.hd div.toolbar { display: none; height: 16px; width: 50px;}
+		
+	/* Module Body */	
+		div.mod .bd {	padding:8px;}
+		div.mod div.bd { 	zoom:1;	padding:8px;	border: 0px solid gray;}
+		div.mod .bd img { max-width:100% !important;}
+		div.mod div.bd ul li a {	color:#000;}
+		// TODO: do more with this if it's the way to target a module for "loading" or updating..  
+		div.mod div.bd div.loading {	background-image:url(/images/progress.gif);	background-repeat:no-repeat;	background-position:5px 5px;	padding:5px 5px 5px 25px;}
+		
+	/* Module Footer */
+		div.mod .ft {border: 0px solid gray;}
+	
+	
+/* General Layout & Text */
+
+	.pad2 {padding: 2px;}
+
+	.pad3 {padding: 3px;}
+	.padTop3 {padding: 3px 0px 0px 0px;}
+	.padBottom3 { padding: 0px 0px 3px 0px;} 
+	.padLeft3 {padding: 0px 0px 0px 3px;}
+	.padRight3 {padding: 0px 3px 0px 0px;}
+
+	.pad5 {padding: 5px;}
+	.padTop5 {padding: 5px 0px 0px 0px;}
+	.padLeft5 {padding: 0px 0px 0px 5px;}
+	.padRight5 {padding: 0px 5px 0px 0px;}
+	.padBottom5 { padding: 0px 0px 5px 0px;} 
+	
+	.pad10 {padding: 10px;}
+	.padTop10 {padding: 10px 0px 0px 0px;}
+	.padRight10 { padding: 0px 10px 0px 0px;}
+	.padBottom10 { padding: 0px 0px 10px 0px;} 
+	
+	.pad15 {padding: 15px;}
+	.padTop15 {padding: 15px 0px 0px 0px;}
+	.padRight15 { padding: 0px 15px 0px 0px;}
+	
+	.blackText, .blackText a, .blackText:hover, .blackText:visited, .blackText.link{color:#000000 !important}
+	
+	.aNone{text-decoration:none;}
+	.medium{font-size:12px !important}
+	.small{font-size:11px !important}
+	.xsmall{font-size:9px !important}
+	.bold{font-weight:bold;}
+
+	.even {}
+	./* WIDTH */
+
+	.quarter { width: 25%}
+	.threeQuarter { width: 75%}
+	.quarterOneThird {width: 25%}
+	.quarterTwoThird {width: 50%}
+	.quarterHalf { width: 37%}
+	.half {width:50%}
+	.third {width:33%}
+	.twoThird {width:66%}
+/* FORMS */
+	.form fieldset {	display: block; 	margin: 0 0 1em 0;	padding: 0 1em 1em 1em;}
+	.form fieldset.radio{	margin: 0 0 0 -1em;}
+	.form fieldset.radio input{	position: static;	clear: both;	float: left;}
+	.form fieldset.radio label{	position: relative;	top: -1.25em;	display: inline;	width: auto;	margin: 0 0 0 8em;	}
+	.form fieldset.radio legend{	float: left;	font-weight: bold;}
+	.form textarea{	position: relative;	display: block;}
+	.form input{	position: relative;	top: -1.4em;	left: 8em;	display: block;}
+	.form input.submit{	clear: both;	top: 0;	display: inline;	position:inherit;}
+	.form label{	clear: both;	//float: left;	display: block;	width: 8em;	margin-top: -1em;	}
+	.form label.first{	margin-top: 1em;}
+	.form select{	position: relative;	top: -1.4em;	left: 8em;	display: block;}
+
+/* layout editor */ 
+	#layout_fileUploader, object#layout_fileUploader, div#uploader object#layout_fileUploader{ float: left;}
+
+/* Menu Editor */
+	div.workarea{float:left;}
+	div.editarea{margin-left:115px;border:1px solid gray;padding:5px;background-color:#f7f7f7}
+	div.workarea ul{padding: 0px; margin:0px; height: 300px;border:1px solid gray;background-color:#f7f7f7; list-style:none;width:110px;}
+
+/* tooltip */
+	.tip {	width: 212px;	padding-top: 37px;	overflow: hidden;	display: none;	position: absolute;z-index:2000;	background: transparent url(/images/tipTop.png) no-repeat top;}	
+	.tipMid {background: transparent url(/images/tipMid.png) repeat-y; padding: 0 25px 20px 25px;}
+	.tipBtm {background: transparent url(/images/tipBtm.png) no-repeat bottom; height: 32px;}
+	
+/* pagination */
+	#pagination{border:0; margin:0; padding:0;}
+	#pagination li{
+	border:0; margin:0; padding:0;
+	font-size:11px;
+	list-style:none;
+	margin-right:2px;
+	display:inline;
+	}
+	#pagination a{border:solid 1px 9aafe5;margin-right:2px;}
+	#pagination .previous-off,
+	#pagination .next-off {
+	border:solid 1px #DEDEDE;color:#888888;display:block;float:left;font-weight:bold;margin-right:2px;padding:3px 4px;}
+	#pagination .next a,
+	#pagination .previous a {font-weight:bold;} 
+	#pagination .active{background:#2e6ab1;color:#FFFFFF;font-weight:bold;display:block;float:left;padding:4px 6px;}
+	#pagination a:link,
+	#pagination a:visited {color:#0e509e;display:block;float:left;padding:3px 6px;text-decoration:none;}
+	#pagination a:hover{border:solid 1px #0e509e}
+
+/* menu buttons 		*/
+
+	div.menu {    display: none;    z-index: 500;    position: absolute;width: 125px;text-align:left;}
+	div.menu.active {    z-index: 100;}
+	
+	button.menu {   cursor: pointer;}
+	button.menu,button.menu:focus,button.menu:active,button.menu:hover {
+	    font-size: 12px !important;
+	    font-family: sans-serif;
+	    line-height: 1.8;
+	    text-shadow: 1px 1px #ddd;
+	    color: #222;
+	    background: #a8acae;
+	    margin: 0 0.5em;
+	    padding: 0;
+	    border: 0;
+	    border-bottom: 1px solid #686c6e;
+	    -webkit-border-radius: 0.5em;
+	    -moz-border-radius: 0.5em;
+	    border-radius: 0.5em;
+	}
+	
+	button.menu span {    font-size: 100%;    line-height: 1.8;    cursor: inherit;    padding: 0 0.8em;}
+	
+	button.menu span img {    vertical-align: -3px;    margin-right: 0.2em;}
+	
+	button.menu.active {
+	    -webkit-border-bottom-left-radius: 0;
+	    -webkit-border-bottom-right-radius: 0;
+	    -moz-border-radius-bottomleft: 0;
+	    -moz-border-radius-bottomright: 0;
+	    border-bottom-left-radius: 0;
+	    border-bottom-right-radius: 0;
+	    border-bottom-color: #cacece;
+	}
+	
+	button.menu:hover,button.menu.active {    background-color: #cacece;    text-shadow: 1px 1px #fff;}
+	
+	div.menu {
+	    font-size: 88%;
+	    font-family: arial !important;
+	    color: #444;
+	    background: #cacece;
+	    padding: 1em;
+	    border: 1px solid #cacece;
+	    border-top-width: 3px;
+	    -moz-border-radius: 0.5em;
+	    -moz-border-radius-topleft: 0;
+	    -webkit-border-radius: 0.5em;
+	    -webkit-border-top-left-radius: 0;
+	    border-radius: 0.5em;
+	    border-top-left-radius: 0;
+	}
+	
+	div.menu.active {    background-color: #eaeeee; }
+	div.menu h3 {    font-size: 108%;    font-weight: bold;    color: #444;    margin: 0;}
+	div.menu h4 {    font-size: 100%;    font-weight: normal;    line-height: 1.5;    color: #999;    margin: 0 0 0.5em 0;    white-space: nowrap;}
+	div.menu hr {    border: 0;    border-top: 1px solid #ddd;    border-bottom: 1px solid #fff;}
+	div.menu ul {    padding-left: 1.5em;}
+
+/* rollup thumbnail? */ 
+	span.subDetails a { color:silver !important; font-weight: bold;}
+
+/* JQUERY UI tweaks */
+	.ui-autocomplete-loading { background: white url('/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+.ui-widget-content { padding: 5px; } 
+.boxy-wrapper { position: absolute; }
+.boxy-wrapper.fixed { position: fixed; }
+.ui-multiselect li a.actionEdit { position: absolute; right: 20px; top: 2px; }
+
+	/* comments */
+	.comment_box{background-color:##D3E7F5; border-bottom:##ffffff solid 1px; padding-top:3px}
+	ol.timeline	{list-style:none;font-size:1.2em; margin:0px; padding: 0px}
+	ol.timeline li{ position:relative;border-top:1px solid gray;}ol.timeline li:first-child{}
+	##flash	{	margin-left:100px;	}

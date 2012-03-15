@@ -1,0 +1,64 @@
+<tables>
+	<table name="plans">
+        <field ColumnName="planID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="title" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="bandwidth" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="storage" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="domain" CF_DataType="CF_SQL_BIT"/>
+		<field ColumnName="advertising" CF_DataType="CF_SQL_BIT"/>
+		<field ColumnName="branding" CF_DataType="CF_SQL_BIT"/>
+		<field ColumnName="support" CF_DataType="CF_SQL_BIT"/>
+	</table>
+    <table name="products">
+    	<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="Name" CF_DataType="CF_SQL_VARCHAR"/>
+       	<field ColumnName="cost" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="planid" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="type" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="modifier" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="modifierAmount" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="recurringFrequency" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="trialPeriod" CF_DataType="CF_SQL_INTEGER"/>
+     </table>
+     <table name="accounts">
+	    <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="firstName" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="lastName" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="address" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="city" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="state" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="zip" CF_DataType="CF_SQL_VARCHAR"/>                                    
+        <field ColumnName="country" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="ccNumber" CF_DataType="CF_SQL_VARCHAR"/>       
+		<field ColumnName="ccExpMo" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="ccExpYr" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="ccCVV2" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"/>
+        <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+     </table>
+     <table name="recurringCharges">
+		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+		<field ColumnName="accountID" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="productID" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="recurringFrequency" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" special="creationDate"/>         
+		<field ColumnName="attempts" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="lastResponse" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>         
+     </table>
+     <table name="transaction">
+		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+		<field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" special="creationDate"/>         
+		<field ColumnName="ipaddress" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="response" CF_DataType="CF_SQL_LONGVARCHAR"/>
+		<field ColumnName="total" CF_DataType="CF_SQL_Money"/>
+		<field ColumnName="accountID" CF_DataType="CF_SQL_INTEGER"/>         
+		<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+     </table>
+     <table name="transactionProduct">
+	     <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+    	 <field ColumnName="transactionID" CF_DataType="CF_SQL_INTEGER"/>
+     	<field ColumnName="productID" CF_DataType="CF_SQL_INTEGER"/>
+     </table>
+</tables>

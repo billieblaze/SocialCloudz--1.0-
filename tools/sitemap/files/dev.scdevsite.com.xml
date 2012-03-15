@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" url="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9">
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						<loc>http://dev.scdevsite.com/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/content/group/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/member/util/list</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/content/event/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/content/restaurant/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/content/music/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/content/blog/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/content/gallery/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/content/video/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/blog/main?categoryid=123</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm
+/forum/display/index/</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/index.cfm/member/signup/details</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+					<url>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						
+					
+						<loc>http://dev.scdevsite.com/sitemap.xml</loc>
+						<changefreq>daily</changefreq>
+						<priority>0.5</priority>
+					</url>
+				
+			</urlset>

@@ -1,0 +1,69 @@
+<tables>
+  
+  			<table name="dataAudit">
+	            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	            <field ColumnName="dateUpdated" CF_DataType="CF_SQL_DATE"  />
+				<field ColumnName="fkType" CF_DataType="CF_SQL_VARCHAR"/>
+	            <field ColumnName="fkID"  CF_DataType="CF_SQL_INTEGER"/>
+	            <field ColumnName="field"  CF_DataType="CF_SQL_INTEGER"/>
+	            <field ColumnName="visitorID"  CF_DataType="CF_SQL_INTEGER"/>
+	   			<field ColumnName="originalValue" CF_DataType="CF_SQL_VARCHAR"/>
+	   			<field ColumnName="newValue" CF_DataType="CF_SQL_VARCHAR"/>
+		    </table>
+		    
+			<table name="visitor">
+	            <field ColumnName="visitorID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	            <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+	            <field ColumnName="dateUpdated" CF_DataType="CF_SQL_DATE"  />
+				<field ColumnName="IPAddress" CF_DataType="CF_SQL_VARCHAR" length="15"/>
+	            <field ColumnName="Browser"  CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	   			<field ColumnName="Referer" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	   			<field ColumnName="Location" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	   			<field ColumnName="Token" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	            <field ColumnName="startpage" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	            <field ColumnName="exitpage" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="city" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	            <field ColumnName="region" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	            <field ColumnName="countrycode" CF_DataType="CF_SQL_VARCHAR" length="2"/>
+	            <field columnName="isBot" CF_DATATYPE="CF_SQL_BIT" />
+		    </table>
+	        
+	        <table name="views"> 
+	            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	            <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+	   			<field ColumnName="querystring" CF_DataType="CF_SQL_VARCHAR" length="1024" truncate="true"/>
+	   			<field ColumnName="Referer" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	            <field ColumnName="visitorID" CF_DataType="CF_SQL_INTEGER"  />
+	
+		    </table>
+	        <table name="activity">
+	            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	            <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+	            <field ColumnName="activityType" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+	            <field ColumnName="activityAction" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+	            <field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="visitorID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="viewID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="contentType" CF_DataType="CF_SQL_VARCHAR"  />
+		    </table>
+	         <table name="campaigns">
+	            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	            <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+	   			<field ColumnName="name" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	            <field ColumnName="source" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	  			<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"  />
+	            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"  />
+	
+		    </table>
+			<table name="bots">
+	            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+	            <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+	            <field ColumnName="useragent" CF_DataType="CF_SQL_VARCHAR"/>
+	        </table>	
+	
+	    </tables>

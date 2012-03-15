@@ -1,0 +1,124 @@
+<tables>
+	<table name="content">
+        <field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+		<field ColumnName="contentType" CF_DataType="CF_SQL_VARCHAR" length="20"  />
+ 		<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="private" CF_DataType="CF_SQL_BIT"  Default="false"/>
+        <field ColumnName="download" CF_DataType="CF_SQL_BIT"  Default="true"/>
+        <field ColumnName="comments" CF_DataType="CF_SQL_BIT"  Default="true"/>
+        <field ColumnName="rating" CF_DataType="CF_SQL_BIT"  Default="true"/>
+        <field ColumnName="explicit" CF_DataType="CF_SQL_BIT"  Default="false"/>
+        <field ColumnName="flagged" CF_DataType="CF_SQL_BIT"  Default="false"/>
+        <field ColumnName="approved" CF_DataType="CF_SQL_BIT" Default="false"/>
+        <field ColumnName="parentID" CF_DataType="CF_SQL_VARCHAR" length="35"/>
+        <field ColumnName="dateCreated" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+		<field ColumnName="dateUpdated" CF_DataType="CF_SQL_DATE" Special="LastUpdatedDate" />
+		<field ColumnName="publishDate" CF_DataType="CF_SQL_DATE" />
+		<field ColumnName="isDeleted" CF_DataType="CF_SQL_BIT" Special="DeletionMark" />
+        <field ColumnName="views" CF_DataType="CF_SQL_INTEGER"/>
+	 	<field ColumnName="ratingAverage" CF_DataType="CF_SQL_INTEGER"/>
+	 	<field ColumnName="commentCount" CF_DataType="CF_SQL_INTEGER"/>
+	</table>
+    <table name="standardattribs">
+    	<field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+       	<field ColumnName="title" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+       	<field ColumnName="subtitle" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+        <field ColumnName="image" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+        <field ColumnName="Creator" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+       	<field ColumnName="desc" CF_DataType="CF_SQL_LONGVARCHAR"/>
+        <field ColumnName="categoryID" CF_DataType="CF_SQL_INTEGER"/>
+        <field ColumnName="sortOrder" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="startdate" CF_DataType="CF_SQL_DATE"/>
+		<field ColumnName="enddate" CF_DataType="CF_SQL_DATE"/>
+    </table>
+    <table name="attribs">
+   		<field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="keyName" CF_DataType="CF_SQL_VARCHAR" length="50"  PrimaryKey="true" Increment="false"/>
+       	<field ColumnName="keyValue" CF_DataType="CF_SQL_VARCHAR" length="1000"/>
+    </table>
+    <table name="tags">
+  	  	<field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" increment="false"/>
+        <field ColumnName="value" CF_DataType="CF_SQL_VARCHAR"  length="100" PrimaryKey="true" increment='false'/>
+    </table>
+    <table name="community">
+        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+  	  	<field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER"/>
+        <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+    </table>
+    <table name="contentcategory">
+        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER"  PrimaryKey="true" increment="True"/>
+  	  	<field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER"/>
+       	<field ColumnName="categoryID" CF_DataType="CF_SQL_INTEGER"/>
+	</table>
+    <table name="favorites">
+	    <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" />
+     	<field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false"/>
+       	<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false"/>
+       	<field ColumnName="level" CF_DataType="CF_SQL_INTEGER"/>
+    </table>
+
+   
+    <table name="category">
+     	<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+   	  	<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" />
+       	<field ColumnName="category" CF_DataType="CF_SQL_VARCHAR"  length="255"/>
+		<field ColumnName="contenttype" CF_DataType="CF_SQL_VARCHAR"/>
+    </table>
+	<table name="UISettings">
+		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+		<field ColumnName="contenttype" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="mainRightnav" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="detailRightnav" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="formTemplate" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="formRightnav" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="childFormTemplate" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="childFormRightnav" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="submitPreFuseaction" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="submitPostFuseaction" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" />
+		<field columnName="submitChildPostURL" CF_DataType="CF_SQL_VARCHAR"/>
+		<field columnName="relocateaftersave" CF_DataType="CF_SQL_VARCHAR"/>
+		<field columnName="sortOrderTemplate" CF_DataType="CF_SQL_VARCHAR"/>
+	</table>
+	<table name="outputTemplates">
+		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+		<field ColumnName="template" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="description" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="type" CF_DataType="CF_SQL_varchar" />
+	</table>
+   	<table name="location">
+		<field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+		<field ColumnName="venue" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="city" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="state" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="country" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="latitude" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="longitude" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="phone" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="zipcode" CF_DataType="CF_SQL_varchar" />
+		<field ColumnName="address" CF_DataType="CF_SQL_varchar" />
+	</table>
+	<table name="comments">
+		            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+					<field ColumnName="fkType" CF_DataType="CF_SQL_VARCHAR" length="20"  />
+		   			<field ColumnName="fkID" CF_DataType="CF_SQL_INTEGER"/>
+		  			<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"/>
+		  			<field ColumnName="parentID" CF_DataType="CF_SQL_INTEGER"/>
+		            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+		   			<field ColumnName="comment" CF_DataType="CF_SQL_LONGVARCHAR"/>
+		  			<field ColumnName="guestName" CF_DataType="CF_SQL_VARCHAR"/>
+		  			<field ColumnName="guestEmail" CF_DataType="CF_SQL_VARCHAR"/>                        
+		  			<field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" special="creationdate"/>          
+		        </table>
+				<table name="commentAttachments">
+					<field ColumnName="commentID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+					<field ColumnName="attachmentType" CF_DataType="CF_SQL_VARCHAR"/>
+					<field ColumnName="attachmenttitle" CF_DataType="CF_SQL_VARCHAR"/>
+					<field ColumnName="attachmentdescription" CF_DataType="CF_SQL_LONGVARCHAR"/>
+					<field ColumnName="attachmenturl" CF_DataType="CF_SQL_VARCHAR"/>
+					<field ColumnName="attachmentcode" CF_DataType="CF_SQL_LONGVARCHAR"/>
+					<field ColumnName="converted" CF_DataType="CF_SQL_BIT"/>
+					<field ColumnName="convertError" CF_DataType="CF_SQL_BIT"/>
+				</table>
+</tables>

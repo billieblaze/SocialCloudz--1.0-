@@ -1,0 +1,62 @@
+<tables>
+		<table name="community">
+            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+		 	<field ColumnName="adminID" CF_DataType="CF_SQL_NUMERIC"/>
+        	<field ColumnName="site" CF_DataType="CF_SQL_VARCHAR" Length="50"/>
+            <field ColumnName="tagline" CF_DataType="CF_SQL_LONGVARCHAR"/>
+            <field ColumnName="subdomain" CF_DataType="CF_SQL_VARCHAR" Length="50"/>
+			<field ColumnName="domainID" CF_DataType="CF_SQL_NUMERIC"/>
+   			<field ColumnName="categoryID" CF_DataType="CF_SQL_NUMERIC"/>
+            <field ColumnName="keywords" CF_DataType="CF_SQL_VARCHAR"/>
+            <field ColumnName="description" CF_DataType="CF_SQL_LONGVARCHAR"/>
+            <field ColumnName="dateCreated" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+			<field ColumnName="dateUpdated" CF_DataType="CF_SQL_DATE" Special="LastUpdatedDate" />
+  			<field ColumnName="google" CF_DataType="CF_SQL_LONGVARCHAR"/>
+			<field ColumnName="microsoft" CF_DataType="CF_SQL_LONGVARCHAR"/>
+            <field ColumnName="heardabout" CF_DataType="CF_SQL_VARCHAR" Length="50"/>
+            <field ColumnName="questionSections" CF_DataType="CF_SQL_VARCHAR" Length="1000"/>
+            <field ColumnName="dateFormat" CF_DataType="CF_SQL_VARCHAR" Length="50"/>
+	      	<field ColumnName="removed" CF_DataType="CF_SQL_BIT"/>
+	      	<field ColumnName="active" CF_DataType="CF_SQL_BIT"/>
+            <field ColumnName="private" CF_DataType="CF_SQL_BIT"/>
+            <field ColumnName="featured" CF_DataType="CF_SQL_BIT"/>
+            <field ColumnName="directory" CF_DataType="CF_SQL_BIT"/>
+   			<field ColumnName="logo" CF_DataType="CF_SQL_VARCHAR"/>             
+        	<field ColumnName="paypalprofile" CF_DataType="CF_SQL_VARCHAR"/>
+            <field ColumnName="bandwidth" CF_DataType="CF_SQL_DECIMAL"/>
+            <field ColumnName="storage" CF_DataType="CF_SQL_DECIMAL"/>
+            <field ColumnName="planID" CF_DataType="CF_SQL_INTEGER"/>
+            <field ColumnName="parentID" CF_DataType="CF_SQL_INTEGER"/>
+        </table>	
+        <table name="domains">
+            <field ColumnName="domainID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+		 	<field ColumnName="name" CF_DataType="CF_SQL_VARCHAR" Length="50"/>
+            <field ColumnName="private" CF_DataType="CF_SQL_BIT"/>
+        </table>	
+        <table name="communitysettings">
+             <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+             <field ColumnName="settingID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+             <field ColumnName="value" CF_DataType="CF_SQL_VARCHAR" />
+        </table>
+        <table name="communitysettinglist">
+             <field ColumnName="settingID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+             <field ColumnName="name" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+             <field ColumnName="valuelist" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+             <field ColumnName="defaultvalue" CF_DataType="CF_SQL_INTEGER" />
+             <field ColumnName="settingType" CF_DataType="CF_SQL_VARCHAR" Length="50" />
+	         <field ColumnName="description" CF_DataType="CF_SQL_VARCHAR" Length="50" />     
+        </table>
+        <table name="communitycategories">
+             <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+             <field ColumnName="category" CF_DataType="CF_SQL_VARCHAR"/>
+        </table>
+		<table name="dnsMask">
+             <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+			 <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>		
+             <field ColumnName="domain" CF_DataType="CF_SQL_VARCHAR"/>
+             <field ColumnName="verified" CF_DataType="CF_SQL_BIT"/>		
+		 	 <field ColumnName="subdomain" CF_DataType="CF_SQL_VARCHAR"/>
+		 	 <field ColumnName="startpage" CF_DataType="CF_SQL_VARCHAR"/>
+        </table>
+	</tables>
+	

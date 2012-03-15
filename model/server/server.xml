@@ -1,0 +1,33 @@
+<tables>
+	        <table name="log">
+	            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	            <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE"/>
+	   			<field ColumnName="browser" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	            <field ColumnName="file" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	  			<field ColumnName="host" CF_DataType="CF_SQL_VARCHAR"  />
+	            <field ColumnName="ip" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	            <field ColumnName="referrer" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+	            <field ColumnName="size" CF_DataType="CF_SQL_INTEGER"/>
+		    </table>
+	        <table name="bandwidth">
+	            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	            <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" special="creationDate"/>
+	            <field ColumnName="total" CF_DataType="CF_SQL_INTEGER"/>
+	            <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+				<field ColumnName="hits" CF_DataType="CF_SQL_INTEGER"/>
+		    </table>
+			<table name="files">
+	            <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	            <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" special="creationDate"/>
+				<field ColumnName="cdnURL" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	            <field ColumnName="container" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	            <field ColumnName="file" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	            <field ColumnName="originalName" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+	            <field ColumnName="filesize" CF_DataType="CF_SQL_INTEGER"/>
+				<field ColumnName="fkType" CF_DataType="CF_SQL_VARCHAR"/>
+				<field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER"/>
+				<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+				<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"/>
+				<field ColumnName="isDeleted" CF_DataType="CF_SQL_BIT"/>
+		    </table>
+	    </tables>

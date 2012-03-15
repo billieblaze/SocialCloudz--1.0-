@@ -1,0 +1,77 @@
+<project name="socialcloudz dev" default="maven: deploy" basedir=".">
+    <description>
+        simple ant deploy / build file
+    </description>
+	
+	<property name="host" value="108.192.132.220"/>
+	<property name="username" value="root"/>
+	<property name="password"  value="bblaze"/>
+	<property name="webpath"  value="/var/share/socialcloudz/"/>
+	<property name="profile"  value="dev"/>
+	
+	<target name="maven: build">
+			<sshexec host="${host}" username="${username}" password="${password}" command="export JAVA_HOME=/opt/soft/java;export PATH=$PATH:$JAVA_HOME;/opt/soft/apache-maven-2.2.1/bin/mvn -P${profile}  -f ${webpath}pom.xml scm:update minify:minify install" trust="true"/>
+	</target>
+
+	<target name="maven: package (debug)">
+
+		<sshexec host="${host}" username="${username}" password="${password}" command="export JAVA_HOME=/opt/soft/java;export PATH=$PATH:$JAVA_HOME;/opt/soft/apache-maven-2.2.1/bin/mvn -P${profile}  -f ${webpath}pom.xml war:exploded " trust="true"/>
+	</target>
+	
+	<target name="maven: minify / package (debug)">
+
+		<sshexec host="${host}" username="${username}" password="${password}" command="export JAVA_HOME=/opt/soft/java;export PATH=$PATH:$JAVA_HOME;/opt/soft/apache-maven-2.2.1/bin/mvn -P${profile}  -f ${webpath}pom.xml minify:minify war:exploded " trust="true"/>
+	</target>
+
+	<target name="maven: clean Target">
+
+			<sshexec host="${host}" username="${username}" password="${password}" command="export JAVA_HOME=/opt/soft/java;export PATH=$PATH:$JAVA_HOME;/opt/soft/apache-maven-2.2.1/bin/mvn -P${profile}  -f ${webpath}pom.xml clean " trust="true"/>
+	</target>
+	
+	<target name="maven: deploy" depends="maven: build,maven: copyJAR,maven: cleanTemp">
+	</target>
+
+	<target name="maven: copyJAR">
+			<sshexec host="${host}" username="${username}" password="${password}" command="cp ${webpath}target/socialcloudz.war /usr/local/tomcat/socialcloudz.war" trust="true"/>
+	</target>
+	<target name="maven: cleanTemp">
+			<sshexec host="${host}" username="${username}" password="${password}" command="rm /tmp/*css -f &amp;&amp; rm /tmp/*js -f" trust="true"/>
+	</target>	
+
+	<target name="tomcat: Stop">
+		<sshexec host="${host}"	username="${username}"	password="${password}"	command="service tomcat stop" trust="true"/>
+	</target>
+	
+	<target name="tomcat: Start">
+		<sshexec host="${host}"	username="${username}"	password="${password}"	command="service tomcat start" trust="true"/>
+	</target>
+	
+	<target name="nginx: Stop">
+		<sshexec host="${host}"	username="${username}"	password="${password}"	command="service nginx stop" trust="true"/>
+	</target>
+	
+	<target name="nginx: Start">
+		<sshexec host="${host}"	username="${username}"	password="${password}"	command="service nginx start" trust="true"/>
+	</target>
+	
+	<target name="memcached: Restart">
+		<sshexec host="${host}"	username="${username}"	password="${password}"	command="killall memcached &amp;&amp; memcached -u root -d" trust="true"/>
+	</target>
+	
+	<target name="ibatis: Create new SQL update">
+		<input message="Update Name" addproperty="updatename"/>
+		<sshexec host="${host}"	username="${username}"	password="${password}"	command="export PATH=$PATH:/opt/soft/ibatis-migrations-3.0.2/ &amp;&amp; cd ${webpath}sqlmigrate &amp;&amp; /opt/soft/ibatis-migrations-3.0.2/migrate new '${updatename}' --path=${webpath}sqlmigrate " trust="true"/>
+	</target>
+		
+	<target name="ibatis: Execute SQL update">
+		<sshexec host="${host}"	username="${username}"	password="${password}"	command="export PATH=$PATH:/opt/soft/ibatis-migrations-3.0.2/ &amp;&amp; cd ${webpath}sqlmigrate &amp;&amp; /opt/soft/ibatis-migrations-3.0.2/migrate up --path=${webpath}sqlmigrate " trust="true"/>
+	</target>
+	
+	<target name="ibatis: Rollback SQL update">
+			<sshexec host="${host}"	username="${username}"	password="${password}"	command="export PATH=$PATH:/opt/soft/ibatis-migrations-3.0.2/ &amp;&amp; cd ${webpath}sqlmigrate &amp;&amp; /opt/soft/ibatis-migrations-3.0.2/migrate down --path=${webpath}sqlmigrate " trust="true"/>
+	</target>
+	
+	<target name="changelog: generate svn + unfuddle rss feed">
+			<sshexec host="${host}"	username="${username}"	password="${password}"	command="cd /usr/local/tomcat/webapps/ROOT/tools/svnRSS/ &amp;&amp;  dos2unix ./rssfeed.sh &amp;&amp;chmod 755 ./rssfeed.sh &amp;&amp; ./rssfeed.sh" trust="true"/>
+	</target>
+</project>

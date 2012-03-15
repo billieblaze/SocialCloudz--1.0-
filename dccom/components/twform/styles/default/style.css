@@ -1,0 +1,237 @@
+body form.formWizForm{
+	margin:10px;
+	padding:0 0 10px 0;
+	
+	width:95%;
+	font-size:12px;
+}
+body form.formWizFormErrorMsg{
+	padding:10px;
+	border:2px solid red;
+	margin:5px;
+	font-size:11px;
+	background:#EEE;
+}
+body div.formWizFormMessage{
+
+
+	
+}
+
+body form.formWizForm h3{
+	font-size:18px;
+	margin:0 0 4px;
+}
+
+body form.formWizForm div.desc{
+	padding-bottom:10px;
+	border-bottom:1px dotted #CCCCCC;
+	margin-bottom:10px;
+}
+
+
+body form.formWizForm ul{
+	margin:0;
+	padding:0;
+	list-style:none none;
+}
+
+body form.formWizForm ul li
+{
+	margin-bottom: 2px;
+	padding:5px 0 5px 0;
+	text-align: left;
+	overflow:hidden;
+	clear:both;
+	list-style:none none;
+	background:none;
+}
+
+form.formWizForm label{
+	margin:5px 0 5px 0;
+	
+}
+
+form.formWizForm label, form.formWizForm legend{
+	display:block;
+	margin:0 0 2px 0;
+}
+form.formWizForm .field label{
+	font-weight:normal;
+}
+form.formWizForm .option{
+	clear:both;
+	margin:5px 0 5px 0;
+}
+form.formWizForm .option input{
+	padding:0;
+	margin:0;
+}
+form.formWizForm .option label{
+	display:block;
+	position:relative;
+	height:1em;
+	margin:-1em 0 0 20px;
+}
+
+form.formWizForm span.req{
+	color:red;
+}
+
+form.formWizForm div.instructions{
+	color:#777;
+	margin:2px 0 2px 0;
+	font-size:0.8em;
+}
+
+form.formWizForm div.info{
+
+	margin-bottom:2px;
+}
+
+
+form.formWizForm input.small{
+	width:80px;
+}
+form.formWizForm select.small{
+	width:25%;
+	min-width:80px;
+}
+form.formWizForm input.medium, form.formWizForm select.medium{
+	width:45%;
+	min-width:140px;
+}
+form.formWizForm input.large, form.formWizForm select.large{
+	width:90%;
+}
+
+.fileupload{
+	width:90%;
+}
+
+form.formWizForm div.sectionBreak{
+	margin:0;
+	border-bottom:1px solid #444;
+	padding:0 0 2px 0;
+	font-weight:lighter;
+}
+form.formWizForm div.sectionBreak div.instructions{
+}
+
+form.formWizForm div.twFormFooter{
+	clear:both;
+	margin-top:10px;
+}
+
+form.formWizForm .submitBut{
+	margin-left:5px;
+}
+
+form.formWizForm input{
+	padding:3px 2px 3px 2px;
+}
+form.formWizForm input.tiny{
+	width:30px;
+}
+form.formWizForm input .small, form.formWizForm select .small{
+	width:25%;
+	min-width:80px;
+}
+form.formWizForm input .medium, form.formWizForm select .medium{
+	width:45%;
+	min-width:140px;
+}
+form.formWizForm input .large, form.formWizForm select .large{
+	width:90%;
+}
+form.formWizForm .half{
+	width:50%;
+}
+form.formWizForm .half input .large, form.formWizForm .half select .large{
+	width:90%;
+}
+form.formWizForm .half fieldset{
+	width:90%;
+}
+form.formWizForm textarea{
+	padding:2px 2px 2px 2px;
+	width:96%;
+}
+form.formWizForm textarea.small{
+	height:71px;
+}
+form.formWizForm textarea.medium{
+	height:132px;
+}
+form.formWizForm textarea.large{
+	height:262px;
+}
+form.formWizForm .sp2{
+	margin-right:2px;
+}
+form.formWizForm .sp6{
+	margin-right:6px;
+}
+form.formWizForm .sep{
+	padding:3px;
+	margin:0 6px 0 0px;
+	text-align:center;
+}
+form.formWizForm .full{
+	width:100%;
+}
+form.formWizForm .hide{
+	display:none;
+}
+form.formWizForm .left{
+	float:left;
+}
+form.formWizForm .right{
+	float:right;
+	text-align:left;
+}
+form.formWizForm .clear{
+	clear:both;
+}
+form.formWizForm div.msg{
+	padding:20px;
+	border:1px dotted #CCC;
+	margin:5px;
+	font-weight:bold;
+}
+form.formWizForm div.address{
+	width:400px;
+}
+form.formWizForm div.phoneIcon{
+	background:transparent url(../../images/icons/fieldtypes/phone.gif) 2px 2px no-repeat;
+	display:block;
+	width:20px;
+	height:18px;
+}
+form.formWizForm div.addressIcon{
+	background:transparent url(../../images/icons/fieldtypes/address.gif) 2px 2px no-repeat;
+	display:block;
+	width:20px;
+	height:18px;
+}
+form.formWizForm div.websiteIcon{
+	background:transparent url(../../images/icons/fieldtypes/website.gif) 2px 2px no-repeat;
+	display:block;
+	width:20px;
+	height:18px;
+}
+form.formWizForm div.emailIcon{
+	background:transparent url(../../images/icons/fieldtypes/email.gif) 2px 2px no-repeat;
+	display:block;
+	width:20px;
+	height:18px;
+}
+form.formWizForm div.fileuploadIcon{
+	background:transparent url(../../images/icons/fieldtypes/fileupload.gif) 2px 2px no-repeat;
+	display:block;
+	width:20px;
+	height:18px;
+}
+form.formWizForm div.info{
+	font-size:0.8em;
+}

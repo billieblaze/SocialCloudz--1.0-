@@ -1,0 +1,158 @@
+<tables>
+	<table name="members">
+    	<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+	 	<field ColumnName="username" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+       	<field ColumnName="email" CF_DataType="CF_SQL_VARCHAR" length="100"/>
+        <field ColumnName="password" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+        <field ColumnName="firstName" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+		<field ColumnName="lastName" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+        <field ColumnName="city" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+        <field ColumnName="state" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+        <field ColumnName="country" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+		<field ColumnName="latitude" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="longitude" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="gender" CF_DataType="CF_SQL_INTEGER"/>
+        <field ColumnName="birthDate" CF_DataType="CF_SQL_DATE"/>
+		<field ColumnName="cellPhone" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+ 		<field ColumnName="cellProvider" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+        <field ColumnName="signupComplete" CF_DataType="CF_SQL_BIT"/>
+        <field ColumnName="globalAdmin" CF_DataType="CF_SQL_BIT"/>
+		<field ColumnName="heardabout" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="identity" CF_DataType="CF_SQL_VARCHAR"/>
+		<field ColumnName="mailBounce" CF_DataType="CF_SQL_INTEGER"/>
+	</table>
+    <table name="membersaccount">
+   		<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+       	<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE"  Special="CreationDate" />
+        <field ColumnName="invisible" CF_DataType="CF_SQL_BIT"/>
+        <field ColumnName="online" CF_DataType="CF_SQL_BIT"/>
+        <field ColumnName="idle" CF_DataType="CF_SQL_BIT"/>
+        <field ColumnName="lastClick" CF_DataType="CF_SQL_DATE" />
+		<field ColumnName="status" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+		<field ColumnName="removed" CF_DataType="CF_SQL_BIT"/>
+        <field ColumnName="approved" CF_DataType="CF_SQL_BIT"/>
+        <field ColumnName="flagged" CF_DataType="CF_SQL_BIT"/>
+        <field ColumnName="image" CF_DataType="CF_SQL_VARCHAR" length="512"/>
+		<field ColumnName="profileviews" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="profileType" CF_DataType="CF_SQL_INTEGER"/>
+		<field ColumnName="featured" CF_DataType="CF_SQL_BIT"/>
+	</table>
+    <table name="access">
+    	<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="accessLevel" CF_DataType="CF_SQL_INTEGER"/>
+    </table>
+    <table name="blocks">
+       	<field ColumnName="sourceID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+       	<field ColumnName="targetID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE"  Special="CreationDate" />
+    </table>
+    <table name="friends">
+     	<field ColumnName="sourceID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+      	<field ColumnName="targetID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE"  Special="CreationDate" />
+    	<field ColumnName="approved" CF_DataType="CF_SQL_numeric"/>
+    </table>
+    <table name="ban">
+    	<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE"  Special="CreationDate" />
+        <field ColumnName="dateExpires" CF_DataType="CF_SQL_DATE"/>
+     	<field ColumnName="item" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+    </table>
+   	<table name="preferencelist">
+  		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+     	<field ColumnName="username" CF_DataType="CF_SQL_VARCHAR" length="255"/>
+		<field ColumnName="name" CF_DataType="CF_SQL_VARCHAR" length="128"/>
+     	<field ColumnName="answers" CF_DataType="CF_SQL_VARCHAR" length="50"/>
+     	<field ColumnName="defaultValue" CF_DataType="CF_SQL_INTEGER"/>
+     	<field ColumnName="sortOrder" CF_DataType="CF_SQL_INTEGER"/>
+	</table>
+   <table name="preferences">
+	    <field ColumnName="preferenceID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+ 	    <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+ 	    <field ColumnName="value" CF_DataType="CF_SQL_INTEGER"/>
+   </table>
+   <table name="notifications">
+		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER"/>
+        <field ColumnName="viewed" CF_DataType="CF_SQL_BIT"/>
+        <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE"  />
+        <field ColumnName="linkURL" CF_DataType="CF_SQL_VARCHAR" length="512"/>
+        <field ColumnName="type" CF_DataType="CF_SQL_VARCHAR" length="45"/>
+        <field ColumnName="message" CF_DataType="CF_SQL_VARCHAR" length="1024"/>
+		<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+	</table>
+	<table name="profileTypes">
+		<field ColumnName="typeID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="name" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+	</table>
+	<table name="profileSections">
+		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="name" CF_DataType="CF_SQL_VARCHAR"/>
+        <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+        <field ColumnName="sortOrder" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="typeID" CF_DataType="CF_SQL_INTEGER" />
+	</table>
+	<table name="profileQuestions">
+		<field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+       	<field ColumnName="question" CF_DataType="CF_SQL_VARCHAR"/>
+	 	<field ColumnName="type" CF_DataType="CF_SQL_VARCHAR"/>
+       	<field ColumnName="sectionID" CF_DataType="CF_SQL_INTEGER"/>
+	 	<field ColumnName="sortOrder" CF_DataType="CF_SQL_INTEGER" />
+	 	<field ColumnName="multiple" CF_DataType="CF_SQL_BIT" />
+	 	<field ColumnName="groupID" CF_DataType="CF_SQL_INTEGER"/>
+	 	<field ColumnName="valueList" CF_DataType="CF_SQL_LONGVARCHAR"/>
+	 	<field ColumnName="description" CF_DataType="CF_SQL_LONGVARCHAR"/>
+	 	
+		</table>
+	<table name="profileAnswers">
+ 	  	<field ColumnName="questionid" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+	  	<field ColumnName="memberid" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+        <field ColumnName="value" CF_DataType="CF_SQL_LONGVARCHAR"/>
+        <field ColumnName="answerSet" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+	</table>
+	<table name="groups">
+        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+     	<field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER"/>
+     	<field ColumnName="name" CF_DataType="CF_SQL_VARCHAR"/>
+     	<field ColumnName="desc" CF_DataType="CF_SQL_VARCHAR"/>     	  	
+	 	<field ColumnName="type" CF_DataType="CF_SQL_VARCHAR"/>
+     	<field ColumnName="active" CF_DataType="CF_SQL_BIT"/>
+     	<field ColumnName="isVisible" CF_DataType="CF_SQL_BIT"/>
+     	<field ColumnName="dateCreated" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+        <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="contentID" CF_DataType="CF_SQL_INTEGER" />
+	</table>
+	<table name="groupMember">
+	  	<field ColumnName="groupID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+	  	<field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="false" />
+     	<field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" Special="CreationDate" />
+	 	<field ColumnName="admin" CF_DataType="CF_SQL_BIT" />
+	</table>
+	<table name="invitation">
+        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="communityID" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" special="creationDate" />
+	  	<field ColumnName="invitationCode" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="email" CF_DataType="CF_SQL_VARCHAR" />
+        <field ColumnName="campaign" CF_DataType="CF_SQL_VARCHAR" />
+        <field ColumnName="landingPage" CF_DataType="CF_SQL_VARCHAR" />	
+	</table>
+	<table name="invitationCode">
+        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="IDString" CF_DataType="CF_SQL_VARCHAR" />
+        <field ColumnName="dateCreated" CF_DataType="CF_SQL_DATE" special="creationDate" />
+	</table>
+	<table name="invitationTracking"> 
+        <field ColumnName="ID" CF_DataType="CF_SQL_INTEGER" PrimaryKey="true" Increment="true" />
+        <field ColumnName="memberID" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="visitorID" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="invitationID" CF_DataType="CF_SQL_INTEGER" />
+        <field ColumnName="dateEntered" CF_DataType="CF_SQL_DATE" special="creationDate" />
+ 	</table>
+</tables>

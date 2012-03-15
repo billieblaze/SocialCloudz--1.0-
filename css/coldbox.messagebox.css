@@ -1,0 +1,23 @@
+.cbox_messagebox{
+	font-size: 13px;
+	font-weight: bold;
+	margin: 10px;
+}
+div.cbox_messagebox_info{
+	background: #D1E6EF url(/coldbox/system/includes/images/cmsg.gif) no-repeat scroll .5em 50% !important;
+	border: 1px solid #2580B2 !important;
+	margin: 0.3em !important;
+	padding: 0pt 1em 0pt 3.5em !important;
+}
+div.cbox_messagebox_warning{
+	background: #FFF2CF url(/coldbox/system/includes/images/wmsg.gif) no-repeat scroll .5em 50% !important;
+	border: 1px solid #2580B2 !important;
+	margin: 0.3em !important;
+	padding: 0pt 1em 0pt 3.5em !important;
+}
+div.cbox_messagebox_error{
+	background: #FFFFE0 url(/coldbox/system/includes/images/emsg.gif) no-repeat scroll .5em 50% !important;
+	border: 1px solid #2580B2 !important;
+	margin: 0.3em !important;
+	padding: 0pt 1em 0pt 3.5em !important;
+}

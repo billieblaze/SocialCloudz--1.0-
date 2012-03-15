@@ -1,0 +1,1 @@
+<cfoutput><tr><th width="200">#REQUEST.formItems[ id ].title#</th><td><a href="#request.community.baseURL#/contentfiles/components/twForm/#URL.instanceId#/#REQUEST.submissionData[ id ]#" target="_blank">#REQUEST.submissionData[ id ]#</a></td></tr></cfoutput>

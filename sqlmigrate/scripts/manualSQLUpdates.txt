@@ -1,0 +1,12 @@
+
+CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`ds`@`%` 
+SQL SECURITY DEFINER VIEW `members`.`profile` AS select `pq`.`Question` AS `question`, `pq`.`multiple` as multiple, `pa`.`questionID` AS `questionID`,`pa`.`value` AS `value`,`pq`.`type` AS `type`,`pa`.`memberID` AS `memberid`,`pa`.`answerSet` AS `answerSet`,`ps`.`communityID` AS `communityID`,`pq`.`sectionID` AS `sectionID` 
+from ((`members`.`profileSections` `ps` join `members`.`profileQuestions` `pq` on((`ps`.`ID` = `pq`.`sectionID`))) join `members`.`profileAnswers` `pa` on((`pa`.`questionID` = `pq`.`ID`)));
+
+
+DELIMITER $$
+
+CREATE DEFINER=`ds`@`%` FUNCTION contentstore.`categoryIDByContentID`(in_contentID int) RETURNS text CHARSET utf8
+BEGIN        declare rval text;        declare tmpvar varchar(100);         DECLARE done INT DEFAULT 0;        DECLARE cur1 CURSOR FOR                 SELECT         categoryID         FROM     category    c                 inner join contentcategory cc on cc.categoryID = c.id          WHERE     ContentId = in_ContentId  ;        DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;       OPEN cur1;  WHILE NOT done DO   FETCH cur1 INTO tmpvar;        IF done = 0  THEN                set rval = concat_ws(',', rval, tmpvar);        end if; END WHILE;  close cur1;   RETURN rval; END
+
+UPDATE `community`.`modules` SET `moduleID`='53', `file`='content' WHERE `moduleID`='65';

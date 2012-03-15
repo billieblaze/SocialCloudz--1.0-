@@ -1,0 +1,16 @@
+.imageContainer {  display: inline;}
+.alignright {float:right; margin:0 0 2px 7px}
+.alignleft {float:left; margin:0 7px 2px 0}
+.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+
+.imageContainer h4{ font:300 16px Helvetica, Arial, sans-serif; color:#fff; text-shadow:1px 1px 0 rgb(0,0,0); }
+.imageContainer p{ font:300 12px  Tahoma, Verdana, sans-serif; color:#aaa; text-shadow:1px 1px 0 rgb(0,0,0);}
+
+.mosaic-block {	float:left;	position:relative;overflow:hidden;margin:2px; background-color: transparent !important;}
+.mosaic-backdrop {background-color: transparent !important;}
+img.nomosaic  {  border:2px solid #fff; }
+div.imgtoolbar {   position: absolute; width: 30px; opacity: 0.6;}
+div.imgtoolbar span {  cursor: pointer;   list-style: none outside none;  margin: 2px; padding: 2px 0;}
+
+#imgtooltip {  position:absolute;  z-index:9999; border: 2px solid gray}

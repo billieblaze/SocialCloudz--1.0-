@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validateThis xsi:noNamespaceSchemaLocation="http://www.validatethis.org/validateThis.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<conditions>
+	</conditions>
+	<contexts>
+		<context name="Register" formName="frmMain" />
+		<context name="Profile" formName="frmMain" />
+		<context name="Create" formName="frmMain" />
+	</contexts>
+	<objectProperties>
+		<property name="userName">
+			<rule type="required" failureMessage="Please enter a user name" />
+			<rule type="rangeLength">
+				<param name="minLength" value="3" />
+				<param name="maxLength" value="50" />
+			</rule>
+			<rule type="custom" failureMessage="Your user name cannot contain special characters">
+				<param name="methodName" value="validateSpecialChars" />
+			</rule>
+			<rule type="custom" failureMessage="Your user name contains bad language">
+				<param name="methodName" value="validateBadLanguage" />
+			</rule>
+			<rule type="custom" failureMessage="Your user name contains bad language">
+				<param name="methodName" value="validateForbiddenWords" />
+			</rule>
+			<rule type="custom"  contexts="Register"  failureMessage="That user name is already taken">
+				<param name="methodName" value="validateUsernameExists" />
+			</rule>
+			<rule type="custom"  contexts="Profile"  failureMessage="That user name is already taken">
+				<param name="methodName" value="validateChangeUsername" />
+			</rule>
+		</property>
+		<property name="email">
+			<rule type="required" failureMessage="Please enter your email address" />
+			<rule type="email" />
+			<rule contexts="Register,Create" type="custom" failureMessage="There is already an account registered for this email address">
+				<param name="methodName" value="validateEmailExists" />
+			</rule>
+		</property>
+		<property name="password">
+			<rule type="required" failureMessage="Please enter a password" contexts="Register"/>
+			<rule type="rangeLength"  contexts="Register" >
+				<param name="minLength" value="6" />
+				<param name="maxLength" value="12" />
+			</rule>
+		</property>
+		
+		<property name="gender">
+			<rule type="required" failureMessage="Please enter your gender" contexts="Register,Profile"/>
+		</property>
+		
+		<property name="key">
+			<rule type="required" contexts="Register"  failureMessage="Please enter the security key" />
+			<rule type="expression" failureMessage="The security key did not match">
+				<param name="expression" value="hash(getKey()) neq getKeyHash()" />
+			</rule>
+		</property>
+	</objectProperties>
+</validateThis>

@@ -1,0 +1,10 @@
+<cfset dccomInfo = StructNew()>
+<cfset dccomInfo.componentFullName = "Form Designer Wizard">
+<cfset dccomInfo.componentDescription = "Allows user to design a form that displays on the page. Form submissions are stored in the database. Emails alerts are optional.">
+<cfset dccomInfo.author = "P.Coppinger, Digital Crew">
+<cfset dccomInfo.version = "1.0">
+<cfset dccomInfo.supports = "Full Page"><!--- Options: "Full Page", "Embed In Page" --->
+<cfset dccomInfo.allowWYSIWYG = "yes">
+<cfset dccomInfo.maxInsertsOnPage = 0><!--- Used when supports contains "Embed In Page" --->
+<cfset dccomInfo.maxNumOfPluginsPerPage = 20>
+<cfset dccomInfo.CMSTabName = "Form">

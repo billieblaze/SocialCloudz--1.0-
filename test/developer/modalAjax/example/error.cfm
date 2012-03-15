@@ -1,0 +1,1 @@
+<cfheader statuscode="500" statustext="Some random error">

@@ -1,0 +1,1 @@
+<cf_dcCom component="[componentName]" instanceName="[instanceName]" dbtype="[dbType]" edit="no"></cf_dcCom>

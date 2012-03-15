@@ -1,0 +1,434 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"> 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.socialcloudz</groupId>
+    <artifactId>socialcloudz</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>socialcloudz</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <netbeans.hint.deploy.server>Tomcat60</netbeans.hint.deploy.server>
+    </properties>
+    <scm>
+        <connection>scm:svn:http://socialcloudz.unfuddle.com/svn/socialcloudz_socialcloudz/trunk</connection>
+    </scm>
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+          <pluginRepositories>
+		    <pluginRepository>
+		      <name>oss.sonatype.org - github-releases</name>
+		      <id>oss.sonatype.org-github-releases</id>
+		      <url>http://oss.sonatype.org/content/repositories/github-releases</url>
+		    </pluginRepository>
+		  </pluginRepositories>
+    <build>
+
+        
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+           
+           	<plugin>
+        		<groupId>com.samaxes.maven</groupId>
+        		<artifactId>maven-minify-plugin</artifactId>
+        		<version>1.2</version>
+		         <configuration>
+		          <webappSourceDir>${basedir}/src/main/webapp/</webappSourceDir>
+		          <webappTargetDir>${basedir}/src/main/webapp/</webappTargetDir>
+		          <cssSourceDir>css</cssSourceDir>
+		          <jsSourceDir>scripts</jsSourceDir>
+		          <cssSourceFiles>
+		           <param>yui_grids.css</param>
+		            <param>jquery-ui-1.8.16.custom.css</param>
+		            <param>farbtastic.css</param>
+		            <param>jquery.jcarousel.css</param>
+		            <param>ui.jqgrid.css</param>
+		            <param>uploadify.css</param>
+		            <param>jquery.jgrowl.css</param>
+		            <param>coldbox.messagebox.css</param>
+		            <param>ui.multiselect.css</param>
+		            <param>anytime.css</param>
+		            <param>skin.css</param>
+					<param>jquery.rating.css</param>
+		            <param>uni-form.css</param>
+		            <param>uni-form.default.css</param>
+		            <param>datepick/jquery.datepick.css</param>
+		            <param>jquery.timeentry.css</param>
+		            <param>jplayer.blue.monday.css</param>
+		          </cssSourceFiles>
+		          <jsSourceFiles>
+		            <param>jquery-1.6.4.min.js</param>
+		            <param>jquery-ui-1.8.16.custom.min.js</param>
+					<param>swfobject.js</param>
+					<param>jquery.form.js</param>
+					<param>jquery.utils.js</param>
+					<param>jquery.strings.js</param>
+					<param>ui.dropslide.js</param>
+					<param>farbtastic.js</param>
+					<param>jquery.betterTooltip.js</param>
+					<param>jquery.hoverIntent.js</param>
+					<param>jquery.tagcloud.min.js</param>
+					<param>jquery.tinysort.min.js</param>
+					<param>jquery.livequery.min.js</param>
+					<param>jquery.jgrowl_minimized.js</param>
+					<param>jquery.autogrow.js</param>
+					<param>jquery.metadata.min.js</param>
+					<param>jquery.rating.pack.js</param>
+					<param>jquery.uploadify.v2.1.0.min.js</param>
+					<param>jquery.jcarousel.pack.js</param>
+				  	<param>ZeroClipboard.js</param>
+				  	<param>anytime.js</param>
+				  	<param>jquery.toJSON.js</param>
+				  	<param>ui.multiselect.js</param>
+				  	<param>grid.locale-en.js</param>
+				  	<param>jquery.jqGrid.min.js</param>
+				  	<param>jquery.qtip-1.0.0-rc3.js</param>
+				  	<param>jquery.jplayer.min.js</param>
+				  	<!-- <param>jquery.modalAjax.js</param> -->
+					<param>forms/jquery.validate-1.6.0.min.js</param>
+				  	<param>forms/jquery.datepick-3.7.5.min.js</param>
+				  	<param>forms/jquery.timeentry-1.4.6.min.js</param>
+				  	<param>forms/jquery.maskedinput-1.2.2.min.js</param>
+				  	<param>forms/jquery.prettyComments-1.4.pack.js</param>
+		            <param>socialcloudz.js</param>
+		          </jsSourceFiles>
+		         
+		          <cssFinalFile>style.css</cssFinalFile>
+		          <jsFinalFile>script.js</jsFinalFile>
+		          <linebreak>-1</linebreak>
+		          <nomunge>false</nomunge>
+		          <verbose>false</verbose>
+		          <preserveAllSemiColons>false</preserveAllSemiColons>
+		          <disableOptimizations>false</disableOptimizations>
+		          <bufferSize>4096</bufferSize>
+		        </configuration>
+
+		    </plugin>
+           
+           <!-- MOBILE  
+           <plugin>
+        		<groupId>com.samaxes.maven</groupId>
+        		<artifactId>maven-minify-plugin</artifactId>
+        		<version>1.2</version>
+		         <configuration>
+		          <webappSourceDir>${basedir}/src/main/webapp/</webappSourceDir>
+		          <webappTargetDir>${basedir}/src/main/webapp/</webappTargetDir>
+		          <cssSourceDir>css</cssSourceDir>
+		          <jsSourceDir>scripts</jsSourceDir>
+		          <cssSourceFiles>
+		           <param>jquery.mobile-1.0rc1.min.css</param>
+		            <param>jquery.rating.css</param>
+		            <param>jquery.jcarousel.css</param>
+		            <param>jquery.jgrowl.css</param>
+		            <param>coldbox.messagebox.css</param>
+		            <param>skin.css</param>
+		            <param>uni-form.css</param>
+		            <param>uni-form.default.css</param>
+		            <param>datepick/jquery.datepick.css</param>
+		            <param>jquery.timeentry.css</param>
+		            <param>jplayer.blue.monday.css</param>
+		            <param>mobile.css</param>
+		          </cssSourceFiles>
+		          <jsSourceFiles>
+		            <param>jquery-1.6.4.min.js</param>
+		            <param>jquery.mobile-1.0rc1.min.js</param>
+		            <param>jquery-ui-1.8.16.custom.min.js</param>
+					<param>jquery.form.js</param>
+					<param>jquery.utils.js</param>
+					<param>jquery.strings.js</param>
+					<param>ui.dropslide.js</param>
+					<param>jquery.tinysort.min.js</param>
+					<param>jquery.livequery.min.js</param>
+					<param>jquery.jgrowl_minimized.js</param>
+					<param>jquery.autogrow.js</param>
+					<param>jquery.metadata.min.js</param>
+					<param>jquery.rating.pack.js</param>
+					<param>jquery.jcarousel.pack.js</param>
+				  	<param>jquery.toJSON.js</param>
+				  	<param>forms/jquery.validate-1.6.0.min.js</param>
+				  	<param>forms/jquery.datepick-3.7.5.min.js</param>
+				  	<param>forms/jquery.timeentry-1.4.6.min.js</param>
+				  	<param>forms/jquery.maskedinput-1.2.2.min.js</param>
+				  	<param>forms/jquery.prettyComments-1.4.pack.js</param>
+		            <param>socialcloudz.js</param>
+		             
+		          </jsSourceFiles>
+		         
+		          <cssFinalFile>style.mobile.css</cssFinalFile>
+		          <jsFinalFile>script.mobile.js</jsFinalFile>
+		          <linebreak>-1</linebreak>
+		          <nomunge>false</nomunge>
+		          <verbose>false</verbose>
+		          <preserveAllSemiColons>false</preserveAllSemiColons>
+		          <disableOptimizations>false</disableOptimizations>
+		          <bufferSize>4096</bufferSize>
+		        </configuration>
+
+		    </plugin>-->
+		    
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1-beta-1</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        
+        </plugins>
+       <finalName>socialcloudz</finalName>
+        
+    </build>
+    <profiles>
+        <profile>
+            <id>endorsed</id>
+            <activation>
+                <property>
+                    <name>sun.boot.class.path</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>2.0.2</version>
+                        <configuration>
+                            <!-- javaee6 contains upgrades of APIs contained within the JDK itself.
+                                 As such these need to be placed on the bootclasspath, rather than classpath of the
+                                 compiler.
+                                 If you don't make use of these new updated API, you can delete the profile.
+                                 On non-SUN jdk, you will need to create a similar profile for your jdk, with the similar property as sun.boot.class.path in Sun's JDK.-->
+                            <compilerArguments>
+                                <bootclasspath>${settings.localRepository}/javax/javaee-endorsed-api/6.0/javaee-endorsed-api-6.0.jar${path.separator}${sun.boot.class.path}</bootclasspath>
+                            </compilerArguments>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>javax</groupId>
+                                <artifactId>javaee-endorsed-api</artifactId>
+                                <version>6.0</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+				<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1-alpha-2</version>
+
+                <configuration>
+
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp/WEB-INF/railo</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>railo-web.xml.cfm</include>
+                            </includes>
+                            <targetPath>WEB-INF/railo</targetPath>
+                        </resource>
+                        <resource>
+                            <directory>src/main/webapp/routines</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>parselogs.cfm</include>
+                            </includes>
+                            <targetPath>routines</targetPath>
+                        </resource>
+                        <resource>
+                            <directory>src/main/webapp/config</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>*.cfm</include>
+								 <include>*.cfc</include>
+                            </includes>
+                            <targetPath>config</targetPath>
+                        </resource>
+                        
+                         <resource>
+                            <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>Application.cfc</include>
+                            </includes>
+                            <targetPath>./</targetPath>
+                        </resource>
+                   
+                    </webResources>
+                </configuration>
+            </plugin>
+                    
+                </plugins>
+            </build>
+            <repositories>
+                <repository>
+                    <id>java.net</id>
+                    <name>Java.NET Repository</name>
+                    <url>http://download.java.net/maven/2/</url>
+                </repository>
+            </repositories>
+        </profile>
+        
+        <profile>
+            <id>dev</id>
+     
+            <properties>
+            	<server.secure>http://secure.socialcloudz.com</server.secure>
+               	<server.debug>true</server.debug>
+            	<server.sendMail>yes</server.sendMail>
+            	<server.useMailSpooler>yes</server.useMailSpooler>
+            	<server.adminEmail>bill@socialcloudz.com</server.adminEmail>
+            	<server.logPath>/var/log/nginx</server.logPath>
+            	<scm.revision>1234</scm.revision>
+            	<svn.path>http://socialcloudz.unfuddle.com/svn/socialcloudz_socialcloudz/trunk</svn.path>
+            	
+            	<memcached.host>127.0.0.1</memcached.host>
+                
+                <smtp.server>smtp.mailanyone.net</smtp.server>
+                <smtp.user>noreply@socialcloudz.com</smtp.user>
+                <smtp.password>bblaz3</smtp.password>
+                
+                <db.host>127.0.0.1</db.host>
+                <db.username>ds</db.username>
+                <db.password>techn0!</db.password>
+                <db.port>3306</db.port>
+                
+                <filestorage.content>/mnt/content</filestorage.content>
+                <filestorage.temp>/tmp/getUpload</filestorage.temp>
+                <cdn.css>/css/</cdn.css>
+				<cdn.fam>/images/fam/</cdn.fam>
+				<cdn.js>/scripts/</cdn.js>
+		    
+                <heywatch.ftp>dev.socialcloudz.com</heywatch.ftp>
+                <heywatch.key>c28f03814125c310faa84b6e0023484c</heywatch.key>
+                <heywatch.secret>|_socialCloudz_or_stfu_|</heywatch.secret>
+            </properties>
+            
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>2.0.2</version>
+                        <configuration>
+                            <!-- javaee6 contains upgrades of APIs contained within the JDK itself.
+                                 As such these need to be placed on the bootclasspath, rather than classpath of the
+                                 compiler.
+                                 If you don't make use of these new updated API, you can delete the profile.
+                                 On non-SUN jdk, you will need to create a similar profile for your jdk, with the similar property as sun.boot.class.path in Sun's JDK.-->
+                            <compilerArguments>
+                                <bootclasspath>${settings.localRepository}/javax/javaee-endorsed-api/6.0/javaee-endorsed-api-6.0.jar${path.separator}${sun.boot.class.path}</bootclasspath>
+                            </compilerArguments>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>javax</groupId>
+                                <artifactId>javaee-endorsed-api</artifactId>
+                                <version>6.0</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+            <repositories>
+                <repository>
+                    <id>java.net</id>
+                    <name>Java.NET Repository</name>
+                    <url>http://download.java.net/maven/2/</url>
+                </repository>
+            </repositories>
+        </profile>        
+        
+        <profile>
+            <id>production</id>
+    
+    
+            <properties>
+            	<server.secure>http://staging.socialcloudz.com</server.secure>
+            	<server.environment>production</server.environment>
+            	<server.debug>false</server.debug>
+            	<server.useMailSpooler>yes</server.useMailSpooler>
+            	<server.sendMail>yes</server.sendMail>
+            	<server.adminEmail>bill@socialcloudz.com</server.adminEmail>
+            	<server.logPath>/var/log/nginx</server.logPath>
+            	
+            	<svn.path>http://socialcloudz.unfuddle.com/svn/socialcloudz_socialcloudz/branches/production</svn.path>
+            	
+            	<memcached.host>10.179.97.91</memcached.host>
+
+                <smtp.server>smtp.mailanyone.net</smtp.server>
+                <smtp.user>noreply@socialcloudz.com</smtp.user>
+                <smtp.password>bblaz3</smtp.password>
+                
+                <db.host>10.179.97.91</db.host>
+                <db.username>ds</db.username>
+                <db.password>techn0!</db.password>
+                <db.port>3306</db.port>
+                
+                <filestorage.content>/mnt/content</filestorage.content>
+                <filestorage.temp>/tmp/getUpload</filestorage.temp>
+                
+				<cdn.css>/css/</cdn.css>
+				<cdn.js>/scripts/</cdn.js>
+				<cdn.fam>/images/fam/</cdn.fam>
+
+                <heywatch.ftp>www.socialcloudz.com</heywatch.ftp>
+                <heywatch.key>c28f03814125c310faa84b6e0023484c</heywatch.key>
+                <heywatch.secret>|_socialCloudz_or_stfu_|</heywatch.secret>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>2.0.2</version>
+                        <configuration>
+                            <!-- javaee6 contains upgrades of APIs contained within the JDK itself.
+                                 As such these need to be placed on the bootclasspath, rather than classpath of the
+                                 compiler.
+                                 If you don't make use of these new updated API, you can delete the profile.
+                                 On non-SUN jdk, you will need to create a similar profile for your jdk, with the similar property as sun.boot.class.path in Sun's JDK.-->
+                            <compilerArguments>
+                                <bootclasspath>${settings.localRepository}/javax/javaee-endorsed-api/6.0/javaee-endorsed-api-6.0.jar${path.separator}${sun.boot.class.path}</bootclasspath>
+                            </compilerArguments>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>javax</groupId>
+                                <artifactId>javaee-endorsed-api</artifactId>
+                                <version>6.0</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+            <repositories>
+                <repository>
+                    <id>java.net</id>
+                    <name>Java.NET Repository</name>
+                    <url>http://download.java.net/maven/2/</url>
+                </repository>
+            </repositories>
+        </profile>        
+         
+        
+    </profiles>
+
+</project>
+
+
