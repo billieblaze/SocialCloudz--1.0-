@@ -120,44 +120,44 @@ Optional Methods
 			properties={}
 			},
 
-			{name="imageManager",class="modules.imageManager.interceptors.imageManager"},
+			{name="imageManager",class="#appMapping#.modules.imageManager.interceptors.imageManager"},
 			
 			//configuration
-			{class="interceptors.configuration",
+			{class="#appMapping#.interceptors.configuration",
 			 properties={}
 			},
-			{class="modules.emailTemplates.interceptors.emailTemplates",
+			{class="#appMapping#.modules.emailTemplates.interceptors.emailTemplates",
 			 properties={}
 			},
 			//authCookie
-			{class="interceptors.authCookie",
+			{class="#appMapping#.interceptors.authCookie",
 			 properties={}
 			},
 			//session
-			{class="interceptors.session",
+			{class="#appMapping#.interceptors.session",
 			 properties={}
 			},
 
-			{class="interceptors.authentication",
+			{class="#appMapping#.interceptors.authentication",
 			 properties={}
 			},
 			//page
-			{class="interceptors.page",
+			{class="#appMapping#.interceptors.page",
 			 properties={}
 			},
 			// contentstore
-			{class="interceptors.contentstore",
+			{class="#appMapping#.interceptors.contentstore",
 			 properties={}
 			},
 			//layout
-			{class="interceptors.layout",
+			{class="#appMapping#.interceptors.layout",
 			 properties={}
 			},
-			{class="interceptors.mobile",
+			{class="#appMapping#.interceptors.mobile",
 				properties={}
 			},
 			//api
-			{class="interceptors.api",
+			{class="#appMapping#.interceptors.api",
 			 properties={}
 			}
 		];

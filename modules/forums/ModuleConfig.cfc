@@ -14,7 +14,7 @@
 		this.layoutParentLookup = false;
 		
 		function configure(){
-			application.forum = createobject('component', 'model/forum').init('community');
+			application.forum = createobject('component', '#moduleMapping#/model/forum').init('community');
 		}
 	</cfscript>
 

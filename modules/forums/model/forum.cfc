@@ -1,7 +1,7 @@
 <cfcomponent>
 	<cffunction name="init" returntype="forum">
     	<cfargument name="datasource">
-        <cfset variables.myDAO = createobject('component', 'model.DataMgr.DataMgr_MYSQL').init(arguments.datasource)>
+        <cfset variables.myDAO = createobject('component', 'socialcloudz.model.DataMgr.DataMgr_MYSQL').init(arguments.datasource)>
 		<cfset variables.datasource = arguments.datasource>
         <cfreturn this>
     </cffunction>

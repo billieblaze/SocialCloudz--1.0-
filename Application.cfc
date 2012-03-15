@@ -5,9 +5,10 @@
 		this.sessionmanagement = true;
 		this.setDomainCookies = true;
 		COLDBOX_APP_ROOT_PATH = getDirectoryFromPath(getCurrentTemplatePath());
-		COLDBOX_APP_MAPPING   = "/";
+		COLDBOX_APP_MAPPING   = "/socialcloudz";
 		COLDBOX_CONFIG_FILE   = "";
 		COLDBOX_APP_KEY       = "";
+		
 	</cfscript>
 	<cffunction name="onApplicationStart" returnType="boolean" output="false">
 			<cfscript>

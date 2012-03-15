@@ -17,7 +17,7 @@
 	<cffunction name="configure">
 		<cfscript>
 			interceptors = [
-				{name="statistics",class="modules.statistics.interceptors.statistics",
+				{name="statistics",class="#appMapping#.modules.statistics.interceptors.statistics",
 				 properties={ }
 				}
 			];	
@@ -26,7 +26,7 @@
 	
 	<cffunction name="onLoad">
 		<cfscript>
-			application.statistics = createobject('component','model.statisticsService').init(datasource='statistics');
+			application.statistics = createobject('component','#moduleMapping#.model.statisticsService').init(datasource='statistics');
 		</cfscript>
 	</cffunction>
 	
