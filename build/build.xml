@@ -72,7 +72,7 @@
 		<mkdir dir="${output.dir}" />
 
 		<mxunittask server="${dev.url}" port="${dev.port}"   defaultrunner="${dev.directory}/test/HttpAntRunner.cfc" outputdir="${output.dir}" verbose="true" testResultsSummary="my.summary">
-			<directory path="${web.root}$/test" recurse="true" componentpath="${ant.project.name}.test"/>
+			<directory path="${web.root}/test" recurse="true" componentpath="${ant.project.name}.test"/>
 		</mxunittask>
 	
 		<junitreport todir="${junit.out.dir.html}">
