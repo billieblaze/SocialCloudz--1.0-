@@ -59,7 +59,7 @@
 	</target>
 	
 	<target name="myBatis:DEV:RollbackUpdate">
-		<exec executable="cmd">
+		<exec executable="cmd">  
 			<arg value="/c"/>
 			<arg value="${mybatis.path}\migrate.cmd down  --path=${path.development}\build\sqlmigrate  --env=development"/>
 		</exec>	
@@ -72,7 +72,7 @@
 		<mkdir dir="${output.dir}" />
 
 		<mxunittask server="${dev.url}" port="${dev.port}"   defaultrunner="${dev.directory}/test/HttpAntRunner.cfc" outputdir="${output.dir}" verbose="true" testResultsSummary="my.summary">
-			<directory path="${web.root}${ant.project.name}/test" recurse="true" componentpath="${ant.project.name}.test"/>
+			<directory path="${web.root}$/test" recurse="true" componentpath="${ant.project.name}.test"/>
 		</mxunittask>
 	
 		<junitreport todir="${junit.out.dir.html}">
