@@ -1,0 +1,197 @@
+<project name="socialcloudz" basedir=".."> 
+    <description>
+        simple ant deploy / build file
+    </description>
+	
+	<property file="build/build.properties"/>
+	
+	<!-- Load additional tasks -->
+	<taskdef name="query" classname="com.jera.anttasks.Query"/>
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml"/>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	<taskdef name="mxunittask" classname="org.mxunit.ant.MXUnitAntTask" classpath="../../ant/lib/mxunit-ant.jar" />
+
+	<!-- These will not be pushed to production -->
+	<patternset id="production.exclude">
+	</patternset>
+	<patternset id="deployment.exclude">
+		<exclude name="**/.project"/>
+		<exclude name="**/_build/**"/>
+		<exclude name="**/_deploy/**"/>
+		<exclude name="**/_notes/**"/>
+		<exclude name="**/_test/**"/>
+		<exclude name="**/thumbs.db"/>
+		<exclude name="**/settings.xml"/>
+	</patternset>
+	
+	
+	
+	<!-- MYBATIS SCHEMA MIGRATIONS -->
+	<target name="myBatis:Bootstrap">
+			<echo>
+					${mybatis.path}\migrate.cmd bootstrap --path=${path.development}\build\sqlmigrate
+					</echo>
+				<exec executable="cmd">
+					<arg value="/c"/>
+					<arg value="${mybatis.path}\migrate.cmd bootstrap  --path=${path.development}\build\sqlmigrate"/>
+				</exec>	
+			</target>
+	<target name="myBatis:NewUpdate">
+		<input message="Update Name" addproperty="updatename"/>
+		<echo>
+		${mybatis.path}\migrate.cmd new ${updatename} --path=${path.development}\build\sqlmigrate
+		</echo>
+		<exec executable="cmd">
+			<arg value="/c"/>
+			<arg value="${path.cfxtest}${mybatis.path}\migrate.cmd new ${updatename} --path=${path.development}\build\sqlmigrate "/>
+		</exec>	
+	</target>
+		
+	<target name="myBatis:DEV:DoUpdate">
+		<echo>
+			${path.cfxtest}${mybatis.path}\migrate.cmd up  --path=${path.development}\build\sqlmigrate --env=development
+		</echo>
+		<exec executable="cmd">
+			<arg value="/c"/>
+			<arg value="${path.cfxtest}${mybatis.path}\migrate.cmd up  --path=${path.development}\build\sqlmigrate --env=development"/>
+		</exec>	
+	</target>
+	
+	<target name="myBatis:DEV:RollbackUpdate">
+		<exec executable="cmd">
+			<arg value="/c"/>
+			<arg value="${mybatis.path}\migrate.cmd down  --path=${path.development}\build\sqlmigrate  --env=development"/>
+		</exec>	
+	</target>
+	
+	
+	<target name="MXUnit:DEV:RunTests">
+	
+		<mkdir dir="${junit.out.dir.html}" />
+		<mkdir dir="${output.dir}" />
+
+		<mxunittask server="${dev.url}" port="${dev.port}"   defaultrunner="${dev.directory}/test/HttpAntRunner.cfc" outputdir="${output.dir}" verbose="true" testResultsSummary="my.summary">
+			<directory path="${web.root}${ant.project.name}/test" recurse="true" componentpath="${ant.project.name}.test"/>
+		</mxunittask>
+	
+		<junitreport todir="${junit.out.dir.html}">
+			<fileset dir="build/${output.dir}">
+				<include name="*.xml" />
+			</fileset>
+			<report format="frames" todir="${junit.out.dir.html}" styledir="${style.dir}" />
+		</junitreport>
+		<delete dir="${output.dir}" />
+
+		<!-- Read the properties files we generated -->
+		<property file="${output.dir}/my.summary" />
+		<echoproperties />
+
+		<echo>
+			MXUnit build completed.
+			${user.dir}\testresults\html\index.html
+		</echo> 
+	</target>
+	
+	<target name="MXUnit:STAGING:RunTests">
+		
+			<mkdir dir="${junit.out.dir.html}" />
+			<mkdir dir="${output.dir}" />
+
+			<mxunittask server="${stage.url}" port="${stage.port}"   defaultrunner="${stage.directory}/test/HttpAntRunner.cfc" outputdir="${output.dir}" verbose="true" testResultsSummary="my.summary">
+				<directory path="${web.root}${ant.project.name}/test" recurse="true" componentpath="${ant.project.name}.test"/>
+			</mxunittask>
+		
+			<junitreport todir="${junit.out.dir.html}">
+				<fileset dir="build/${output.dir}">
+					<include name="*.xml" />
+				</fileset>
+				<report format="frames" todir="${junit.out.dir.html}" styledir="${style.dir}" />
+			</junitreport>
+			<delete dir="${output.dir}" />
+
+			<!-- Read the properties files we generated -->
+			<property file="${output.dir}/my.summary" />
+			<echoproperties />
+
+			<echo>
+				MXUnit build completed.
+				${user.dir}\testresults\html\index.html
+			</echo> 
+		</target>
+	<target name="MXUnit:PRODUCTION:RunTests">
+		
+			<mkdir dir="${junit.out.dir.html}" />
+			<mkdir dir="${output.dir}" />
+
+			<mxunittask server="${production.url}" port="${production.port}"   defaultrunner="${production.directory}/test/HttpAntRunner.cfc" outputdir="${output.dir}" verbose="true" testResultsSummary="my.summary">
+				<directory path="${web.root}${ant.project.name}/test" recurse="true" componentpath="${ant.project.name}.test"/>
+			</mxunittask>
+		
+			<junitreport todir="${junit.out.dir.html}">
+				<fileset dir="build/${output.dir}">
+					<include name="*.xml" />
+				</fileset>
+				<report format="frames" todir="${junit.out.dir.html}" styledir="${style.dir}" />
+			</junitreport>
+			<delete dir="${output.dir}" />
+
+			<!-- Read the properties files we generated -->
+			<property file="${output.dir}/my.summary" />
+			<echoproperties />
+
+			<echo>
+				MXUnit build completed.
+				${user.dir}\testresults\html\index.html
+			</echo> 
+		</target>
+	
+	
+	<!-- deployment -->
+	<target name="Deploy:Staging">
+		<echo> Hello ${user.name}, now deploying to staging </echo>
+        <tstamp>
+            <format pattern="MMM-dd-yyyy HH:mm:ss" property="TODAY"/>
+        </tstamp>
+							
+		<dist svnpath="${svn.trunk}"  dest="staging"/>
+		
+	</target>
+	
+	<target name="Deploy:Production">
+		
+					
+		<dist svnpath="${svn.trunk}" dest="production"/>
+		
+		
+	</target>
+			
+	
+	<!-- Macros -->
+	<macrodef name="dist" description="Export project files from SVN to local build directory.">
+			<attribute name="svnpath"/>
+			<attribute name="dest"/>
+				
+			<sequential>
+				<echo>
+	                Exporting '@{svnpath}' to '${path.@{dest}}'
+	            </echo>
+				<delete file="${path.@{dest}}\config\_deploy.tag" failOnError="false" />
+				
+				<svn javahl="false" svnkit="false" username='bblaze' password='bblaze$'> 
+					<cleanup  dir="${path.@{dest}}" />
+					<update  dir="${path.@{dest}}" recurse="true"/>
+				</svn>
+				
+		        <tstamp>
+		            <format pattern="MMM-dd-yyyy HH:mm:ss" property="TODAY"/>
+		        </tstamp>
+				
+				<echo>
+					creating deploy flag: "${path.@{dest}}\config\_deploy.tag"  - Version: ${version}.${SVN_REVISION}
+				</echo>
+				<echo file="${path.@{dest}}\config\_deploy.tag">Last Updated on ${TODAY} - Version: ${version}.${SVN_REVISION} </echo>
+				<echoproperties />
+			</sequential>
+		</macrodef>
+</project>
