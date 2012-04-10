@@ -1,62 +1,53 @@
+<!---
+********************************************************************************
+ContentBox - A Modular Content Platform
+Copyright 2012 by Luis Majano and Ortus Solutions, Corp
+www.gocontentbox.org | www.luismajano.com | www.ortussolutions.com
+********************************************************************************
+Apache License, Version 2.0
+
+Copyright Since [2012] [Luis Majano and Ortus Solutions,Corp]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+********************************************************************************
+ --->
 <cfcomponent output="false" hint="My App Configuration">
 <cfscript>
-/**
-structures/arrays to create for configuration
-
-- coldbox (struct)
-- settings (struct)
-- conventions (struct)
-- environments (struct)
-- ioc (struct)
-- models (struct)
-- debugger (struct)
-- mailSettings (struct)
-- i18n (struct)
-- bugTracers (struct)
-- webservices (struct)
-- datasources (struct)
-- layoutSettings (struct)
-- layouts (array of structs)
-- cacheBox (struct)
-- interceptorSettings (struct)
-- interceptors (array of structs)
-- modules (struct)
-- logBox (struct)
-
-Available objects in variable scope
-- controller
-- logBoxConfig
-- appMapping (auto calculated by ColdBox)
-
-Required Methods
-- configure() : The method ColdBox calls to configure the application.
-Optional Methods
-- detectEnvironment() : If declared the framework will call it and it must return the name of the environment you are on.
-- {environment}() : The name of the environment found and called by the framework.
-
-*/
-	
 	// Configure ColdBox Application
 	function configure(){
 	
 		// coldbox directives
 		coldbox = {
 			//Application Setup
-			appName 				= "socialcloudz",
-			eventName 				= "event",
-			
+			appName 				= "ContentBox",
+
 			//Development Settings
 			debugMode				= false,
-			debugPassword			= "",
-			reinitPassword			= "",
+			//debugPassword			= "bblaze",
+			//reinitPassword			= "bblaze",
 			handlersIndexAutoReload = false,
-			configAutoReload		= false,
-			
+
 			//Implicit Events
-			defaultEvent			= "cms.page.index",
+			defaultEvent			= "General.index",
+			requestStartHandler		= "Main.onRequestStart",
+			requestEndHandler		= "Main.onRequestEnd",
+			applicationStartHandler = "Main.onAppInit",
+			sessionStartHandler 	= "Main.onSessionStart",
+			sessionEndHandler		= "Main.onSessionEnd",
+			missingTemplateHandler	= "Main.onMissingTemplate",
 			
 			//Extension Points
-			UDFLibraryFile 				= "",
+			UDFLibraryFile 				= "includes/helpers/ApplicationHelper.cfm",
 			coldboxExtensionsLocation 	= "",
 			modulesExternalLocation		= [],
 			pluginsExternalLocation 	= "",
@@ -66,168 +57,117 @@ Optional Methods
 			requestContextDecorator 	= "",
 			
 			//Error/Exception Handling
-			exceptionHandler		= "main.onException",
-			onInvalidEvent			= "",
-			customErrorTemplate		= "views/error.cfm",
+			exceptionHandler		= "Main.onException",
+			onInvalidEvent			= "Main.onInvalidEvent",
+			customErrorTemplate		= "",
 				
 			//Application Aspects
 			handlerCaching 			= true,
-			eventCaching			= true,
-			proxyReturnCollection 	= false,
-			flashURLPersistScope	= "session"	
+			eventCaching			= true
 		};
-	
+		
 		// custom settings
 		settings = {
-			messagebox_style_override = true
-			
+			PagingMaxRows = 3,
+			PagingBandGap = 10
 		};
+
 		
 		// environment settings, create a detectEnvironment() method to detect it yourself.
 		// create a function with the name of the environment so it can be executed if that environment is detected
 		// the value of the environment is a list of regex patterns to match the cgi.http_host.
 		environments = {
-			development = "scdevsite.com"
+			development = "^scdevsite."
 		};
 		
 		// Module Directives
 		modules = {
 			//Turn to false in production
-			autoReload = false
+			autoReload = false,
+			// An array of modules names to load, empty means all of them
+			include = [],
+			// An array of modules names to NOT load, empty means none
+			exclude = [] 
+		};
+		
+		//LogBox DSL
+		logBox = {
+			// Define Appenders
+			appenders = {
+				coldboxTracer = { class="coldbox.system.logging.appenders.ColdboxTracerAppender" },
+				// Database Appender Registration
+		        dbAppender = {
+		            class="coldbox.system.logging.appenders.DBAppender",
+		            properties = {
+		                // The datasource to connect to
+		                dsn = "socialcloudz", 
+		                // The table to log to
+		                table="api_logs", 
+		                // If the table does not exist, then create it
+		                autocreate=true, 
+		                // The type to use for long text inserting.
+		                textDBType="longtext"
+		            }
+		        }
+			},
+			
+			// Root Logger
+			root = { levelmax="INFO", appenders="*" },
+			// Implicit Level Categories
+			//info = [ "coldbox.system" ]
 		};
 		
 		//Layout Settings
 		layoutSettings = {
-			defaultLayout = "Layout.Main.cfm",
-			defaultView   = ""
+			defaultLayout = "Layout.Main.cfm"
+		};
+
+		// ORM
+		orm = {
+			// Enable Injection
+			injection = {
+				enabled = true
+			}
 		};
 		
-		//Interceptor Settings
-		interceptorSettings = {
-			throwOnInvalidStates = true,
-			customInterceptionPoints = ""
+		//i18n & Localization
+		i18n = {
+			defaultResourceBundle = "includes/i18n/main",
+			defaultLocale = "en_US",
+			localeStorage = "session",
+			unknownTranslation = "**NOT FOUND**"		
 		};
 		
 		//Register interceptors as an array, we need order
 		interceptors = [
-			//Autowire
-			{class="coldbox.system.interceptors.Autowire",
-			 properties={}
-			},
-			
 			//SES
-			{class="coldbox.system.interceptors.ses",
-			properties={}
-			},
-
-			{name="imageManager",class="#appMapping#.modules.imageManager.interceptors.imageManager"},
-			
-			//configuration
-			{class="#appMapping#.interceptors.configuration",
-			 properties={}
-			},
-			{class="#appMapping#.modules.emailTemplates.interceptors.emailTemplates",
-			 properties={}
-			},
-			//authCookie
-			{class="#appMapping#.interceptors.authCookie",
-			 properties={}
-			},
-			//session
-			{class="#appMapping#.interceptors.session",
-			 properties={}
-			},
-
-			{class="#appMapping#.interceptors.authentication",
-			 properties={}
-			},
-			//page
-			{class="#appMapping#.interceptors.page",
-			 properties={}
-			},
-			// contentstore
-			{class="#appMapping#.interceptors.contentstore",
-			 properties={}
-			},
-			//layout
-			{class="#appMapping#.interceptors.layout",
-			 properties={}
-			},
-			{class="#appMapping#.interceptors.mobile",
-				properties={}
-			},
-			//api
-			{class="#appMapping#.interceptors.api",
-			 properties={}
-			}
+			{class="coldbox.system.interceptors.SES"}
 		];
-		
-		datasources = {
-			community   = {name="community"},
-			forums   = {name="community"},
-			contentStore   = {name="contentStore"},
-			members   = {name="members"},
-			statistics   = {name="statistics"}
-		};
-		
-		models = {
-			objectCaching = true,
-			definitionFile = "config/modelMappings.cfm",
-			externalLocation = "coldbox.testing.testmodel",
-			SetterInjection = false,
-			DICompleteUDF = "onDIComplete",
-			StopRecursion = "",
-			parentFactory 	= {
-				framework = "coldspring",
-				definitionFile = "config/parent.xml.cfm"
-			}
-		};
-
-		logBox = {
-			// Register Appenders
-			appenders = {
-				main = {
-					class="coldbox.system.logging.appenders.AsyncRollingFileAppender",
-					properties={
-						filePath=expandPath("/logs"),autoExpand=false,fileMaxArchives=1,fileMaxSize=3000
-					}
-				},
-				upload = {
-					class="coldbox.system.logging.appenders.AsyncRollingFileAppender",
-					properties={
-						filePath=expandPath("/logs"),autoExpand=false,fileMaxArchives=1,fileMaxSize=3000
-					}
-				},
-				contentImport = {
-					class="coldbox.system.logging.appenders.AsyncRollingFileAppender",
-					properties={
-						filePath=expandPath("/logs"),autoExpand=false,fileMaxArchives=1,fileMaxSize=3000
-					}
-				}
-			},
-			root = {levelMin="FATAL", levelMax="WARN", appenders="main"},
-			categories = {
-				"handlers.util.upload" = { levelMin="FATAL", levelMax="debug", appenders="upload"},
-				"handlers.content.import" = { levelMin="FATAL", levelMax="debug", appenders="contentImport"}
-			}
-				
-				
-				
-		};
 
 	}
-	
+
+	// ORTUS DEVELOPMENT ENVIRONMENT, REMOVE FOR YOUR APP IF NEEDED
 	function development(){
-		// Override coldbox directives
-		coldbox.debugMode = true;
+		//coldbox.debugmode=true;
+		coldbox.handlersIndexAutoReload = true;
 		coldbox.handlerCaching = false;
-		coldbox.eventCaching = false;
-		coldbox.debugPassword = "";
-		coldbox.reinitPassword = "";
-		coldbox.exceptionHandler		= "";
-		coldbox.customErrorTemplate		= "";
-		return true;
+		coldbox.reinitpassword = "";
+		coldbox.debugpassword = "";
+		coldbox.debugmode = true;
+		//wirebox.singletonreload = true;
+
+
+
+		// ses debugging
+		logbox.appenders.files={class="coldbox.system.logging.appenders.RollingFileAppender",
+			properties = {
+				filename = "ContentBox", filePath="../logs"
+			}
+		};
+		//logbox.debug = ["coldbox.system.interceptors.Security"];
+		//logbox.debug = [ "coldbox.system.aop" ];
+
 	}
 	
-	</cfscript>
+</cfscript>
 </cfcomponent>

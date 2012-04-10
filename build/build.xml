@@ -1,4 +1,4 @@
-<project name="socialcloudz" basedir=".."> 
+<project name="socialcloudz2" basedir=".."> 
     <description>
         simple ant deploy / build file
     </description>
@@ -24,8 +24,6 @@
 		<exclude name="**/thumbs.db"/>
 		<exclude name="**/settings.xml"/>
 	</patternset>
-	
-	
 	
 	<!-- MYBATIS SCHEMA MIGRATIONS -->
 	<target name="myBatis:Bootstrap">

@@ -1,25 +1,141 @@
+﻿<!-----------------------------------------------------------------------
+Author 	 :	Luis Majano
+Date     :	September 25, 2005
+Description :
 
-<cfcomponent name="MainTest" extends="mxunit.framework.TestCase">
-	<!--- Begin specific tests --->
+	Unit test for the ehMain Handler.
+
+----------------------------------------------------------------------->
+<cfcomponent extends="coldbox.system.testing.BaseTestCase" appMapping="/socialcloudz2">
 	
-	<cffunction name="testonException" access="public" returnType="void">
+	<cffunction name="setUp" returntype="void" output="false">
 		<cfscript>
-			assertFalse(true,"Test not implemented");
+		// Call the super setup method to setup the app.
+		super.setup();
+		
+		// Any preparation work will go here for this test.
 		</cfscript>
-	</cffunction>		
+	</cffunction>
 	
-
-	<!--- setup and teardown --->
-	
-	<cffunction name="setUp" returntype="void" access="public">
+	<cffunction name="testonAppInit" returntype="void" output="false">
 		<cfscript>
-			this.myComp = createObject("component","handlers.Main");		
+		var event = "";
+		
+		//Place any variables on the form or URL scope to test the handler.
+		//URL.name = "luis"
+		event = execute("main.onAppInit");
+			
+		//Do your asserts below
+				
 		</cfscript>
 	</cffunction>
 
-	<cffunction name="tearDown" returntype="void" access="public">
-		<!--- Any code needed to return your environment to normal goes here --->
+	<cffunction name="testonRequestStart" returntype="void" output="false">
+		<cfscript>
+		var event = "";
+		
+		//Place any variables on the form or URL scope to test the handler.
+		//URL.name = "luis"
+		event = execute("main.onRequestStart");
+			
+		//Do your asserts below
+				
+		</cfscript>
 	</cffunction>
+
+	<cffunction name="testonRequestEnd" returntype="void" output="false">
+		<cfscript>
+		var event = "";
+		
+		//Place any variables on the form or URL scope to test the handler.
+		//URL.name = "luis"
+		event = execute("main.onRequestEnd");
+			
+		//Do your asserts below
+			
+		</cfscript>
+	</cffunction>
+	
+	<cffunction name="testSessionStart" returntype="void" output="false">
+		<cfscript>
+		var event = "";
+		
+		//Place any variables on the form or URL scope to test the handler.
+		//URL.name = "luis"
+		event = execute("main.onSessionStart");
+			
+		//Do your asserts below
+			
+		</cfscript>
+	</cffunction>
+	
+	<cffunction name="testSessionEnd" returntype="void" output="false">
+		<cfscript>
+		var event = "";
+		var sessionReference = "";
+		
+		//Place a fake session structure here, it mimics what the handler receives
+		URL.sessionReference = structnew();
+		URL.applicationReference = structnew();
+		
+		event = execute("main.onSessionEnd");
+			
+		//Do your asserts below
+			
+		</cfscript>
+	</cffunction>
+
+	<cffunction name="testOnInvalidEvent" returntype="void" output="false">
+		<cfscript>
+		var event = "";
+		var sessionReference = "";
+		
+		//Place a fake session structure here, it mimics what the handler receives
+		URL.sessionReference = structnew();
+		URL.applicationReference = structnew();
+		
+		event = execute("main.onInvalidEvent");
+			
+		//Do your asserts below
+			
+		</cfscript>
+	</cffunction>
+
+
+	<cffunction name="testOnMissingTemplate" returntype="void" output="false">
+		<cfscript>
+		var event = "";
+		var sessionReference = "";
+		
+		//Place a fake session structure here, it mimics what the handler receives
+		URL.sessionReference = structnew();
+		URL.applicationReference = structnew();
+		
+		event = execute("main.onMissingTemplate");
+			
+		//Do your asserts below
+			
+		</cfscript>
+	</cffunction>
+
+	<cffunction name="testonException" returntype="void" output="false">
+		<cfscript>
+		//You need to create an exception bean first and place it on the request context FIRST as a setup.
+		var exceptionBean = CreateObject("component","coldbox.system.web.context.ExceptionBean");
+		var event = "";
+		
+		//Initialize an exception
+		exceptionBean.init(erroStruct=structnew(), extramessage="My unit test exception", extraInfo="Any extra info, simple or complex");
+		//Place it on form or url scope to attach it to request
+		URL.exceptionBean = exceptionBean;
+		
+		//TEST EVENT EXECUTION
+		event = execute("main.onException");
+		
+		//Do your asserts HERE
+
+		</cfscript>
+	</cffunction>
+
 
 </cfcomponent>
-
